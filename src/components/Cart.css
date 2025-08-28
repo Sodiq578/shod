@@ -1,0 +1,46 @@
+/* src/components/Cart.css */
+.cart {
+  padding: 20px;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.cart h1 {
+  font-size: 28px;
+  color: #4a90e2;
+  text-align: center;
+}
+
+.cart ul {
+  list-style: none;
+  padding: 0;
+}
+
+.cart li {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  margin-bottom: 10px;
+  background: #f9f9f9;
+  border-radius: 5px;
+}
+
+.cart button {
+  padding: 5px 10px;
+  background: #ff6f61;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.cart button:hover {
+  background: #e74c3c;
+}
+
+.cart p {
+  font-size: 20px;
+  font-weight: bold;
+  color: #2c3e50;
+}

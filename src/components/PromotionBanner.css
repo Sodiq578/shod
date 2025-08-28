@@ -1,0 +1,60 @@
+.promotion-banner {
+  background: linear-gradient(135deg, #36d1dc, #5b86e5);
+  border-radius: 12px;
+  padding: 30px;
+  margin: 40px 0;
+  color: white;
+  text-align: center;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.banner-content h2 {
+  font-size: 1.8rem;
+  margin-bottom: 25px;
+  font-weight: 600;
+}
+
+.price-section {
+  display: flex;
+  justify-content: center;
+  gap: 50px;
+  margin-bottom: 20px;
+}
+
+.price-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.price-item .label {
+  font-size: 1rem;
+  margin-bottom: 8px;
+  opacity: 0.9;
+}
+
+.price-item .price {
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.discount-note {
+  font-size: 0.9rem;
+  opacity: 0.8;
+  font-style: italic;
+}
+
+@media (max-width: 768px) {
+  .price-section {
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  .banner-content h2 {
+    font-size: 1.5rem;
+  }
+  
+  .price-item .price {
+    font-size: 1.5rem;
+  }
+}

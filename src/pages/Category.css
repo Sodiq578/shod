@@ -1,0 +1,71 @@
+/* Category.css */
+
+.category-page {
+  padding: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.category-page h2 {
+  font-size: 28px;
+  font-weight: bold;
+  margin-bottom: 25px;
+  text-align: center;
+  color: #333;
+}
+
+/* Grid uslubi */
+.products-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 20px;
+}
+
+/* Bo‘sh kategoriya matni */
+.category-page p {
+  text-align: center;
+  font-size: 18px;
+  color: #777;
+  margin-top: 40px;
+}
+
+/* ProductCard ichidagi umumiy stil (agar ichida class bo‘lmasa) */
+.products-grid > div {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.08);
+  padding: 15px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.products-grid > div:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0,0,0,0.15);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .category-page {
+    padding: 20px;
+  }
+
+  .category-page h2 {
+    font-size: 24px;
+  }
+
+  .products-grid {
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+    gap: 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .category-page h2 {
+    font-size: 20px;
+  }
+
+  .products-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+}

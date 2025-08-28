@@ -1,0 +1,30 @@
+.product-carousel {
+  width: 100%;
+  padding: 20px 0;
+}
+
+.swiper {
+  padding-bottom: 40px; /* nuqtalar uchun joy */
+}
+
+.swiper-button-prev,
+.swiper-button-next {
+  color: #333;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.swiper-button-prev:hover,
+.swiper-button-next:hover {
+  color: #ff6600;
+}
+
+.swiper-pagination-bullet {
+  background: #999;
+  opacity: 0.7;
+}
+
+.swiper-pagination-bullet-active {
+  background: #ff6600;
+  opacity: 1;
+}
