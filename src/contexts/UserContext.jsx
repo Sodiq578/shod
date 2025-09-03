@@ -1,4 +1,4 @@
-// contexts/UserContext.jsx
+// src/contexts/UserContext.js (make sure it has these functions)
 import React, { createContext, useContext, useState } from 'react';
 
 const UserContext = createContext();
@@ -12,20 +12,26 @@ export const useUser = () => {
 };
 
 export const UserProvider = ({ children }) => {
-  const [user, setUser] = useState(null);
+  const [favorites, setFavorites] = useState([]);
 
-  const login = (userData) => {
-    setUser(userData);
+  const addToFavorites = (product) => {
+    setFavorites(prev => {
+      // Check if product is already in favorites
+      if (prev.find(item => item.id === product.id)) {
+        return prev;
+      }
+      return [...prev, product];
+    });
   };
 
-  const logout = () => {
-    setUser(null);
+  const removeFromFavorites = (productId) => {
+    setFavorites(prev => prev.filter(item => item.id !== productId));
   };
 
   const value = {
-    user,
-    login,
-    logout
+    favorites,
+    addToFavorites,
+    removeFromFavorites
   };
 
   return (

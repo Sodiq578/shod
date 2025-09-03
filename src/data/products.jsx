@@ -10,7 +10,8 @@ export const products = [
     rating: 4.5,
     reviews: 45,
     seller: "Канцелярский мир",
-    trending: true
+    trending: true,
+    inStock: true
   },
   {
     id: 102,
@@ -22,7 +23,8 @@ export const products = [
     rating: 4.2,
     reviews: 32,
     seller: "ОфисМаркет",
-    trending: false
+    trending: false,
+    inStock: true
   },
   {
     id: 103,
@@ -34,109 +36,9 @@ export const products = [
     rating: 4.4,
     reviews: 28,
     seller: "Бухгалтерские решения",
-    trending: true
+    trending: true,
+    inStock: true
   },
-  {
-    id: 104,
-    name: "Цветные бланки для писем",
-    description: "Элегантные цветные бланки для деловой переписки",
-    price: "22 000 so'm",
-    image: "https://picsum.photos/seed/blanki4/200/200",
-    category: "Бланки",
-    rating: 4.6,
-    reviews: 37,
-    seller: "Канцелярский мир",
-    trending: false
-  },
-
-  // Бумажная продукция - Блокноты
-  {
-    id: 201,
-    name: "Блокнот А5 в твердой обложке",
-    description: "Стильный блокнот для записей",
-    price: "25 000 so'm",
-    image: "https://picsum.photos/seed/blocknot1/200/200",
-    category: "Блокноты",
-    rating: 4.7,
-    reviews: 78,
-    seller: "Канцелярский мир",
-    trending: true
-  },
-  {
-    id: 202,
-    name: "Блокнот на спирали",
-    description: "Удобный блокнот со спиральным креплением",
-    price: "18 000 so'm",
-    image: "https://picsum.photos/seed/blocknot2/200/200",
-    category: "Блокноты",
-    rating: 4.3,
-    reviews: 56,
-    seller: "ОфисМаркет",
-    trending: false
-  },
-  {
-    id: 203,
-    name: "Ежедневник датированный",
-    description: "Ежедневник с разметкой по датам на год",
-    price: "45 000 so'm",
-    image: "https://picsum.photos/seed/blocknot3/200/200",
-    category: "Блокноты",
-    rating: 4.8,
-    reviews: 92,
-    seller: "Канцелярский мир",
-    trending: true
-  },
-  {
-    id: 204,
-    name: "Мини-блокнот карманный",
-    description: "Компактный блокнот для быстрых заметок",
-    price: "9 000 so'm",
-    image: "https://picsum.photos/seed/blocknot4/200/200",
-    category: "Блокноты",
-    rating: 4.2,
-    reviews: 41,
-    seller: "ОфисМаркет",
-    trending: false
-  },
-
-  // Бумажная продукция - Бумага для заметок
-  {
-    id: 301,
-    name: "Стикеры разноцветные",
-    description: "Набор цветных стикеров для заметок",
-    price: "12 000 so'm",
-    image: "https://picsum.photos/seed/notes1/200/200",
-    category: "Бумага для заметок",
-    rating: 4.5,
-    reviews: 67,
-    seller: "Канцелярский мир",
-    trending: true
-  },
-  {
-    id: 302,
-    name: "Блокнот для записей с клеевой полосой",
-    description: "Блокнот с отрывными листами на клеевой основе",
-    price: "15 000 so'm",
-    image: "https://picsum.photos/seed/notes2/200/200",
-    category: "Бумага для заметок",
-    rating: 4.3,
-    reviews: 43,
-    seller: "ОфисМаркет",
-    trending: false
-  },
-  {
-    id: 303,
-    name: "Стикеры в форме стрелок",
-    description: "Стикеры специальной формы для указания важного",
-    price: "8 500 so'm",
-    image: "https://picsum.photos/seed/notes3/200/200",
-    category: "Бумага для заметок",
-    rating: 4.4,
-    reviews: 29,
-    seller: "Канцелярский мир",
-    trending: true
-  },
-
   // Бумажная продукция - Бумага для черчения
   {
     id: 401,
@@ -148,7 +50,8 @@ export const products = [
     rating: 4.7,
     reviews: 38,
     seller: "Творческая мастерская",
-    trending: false
+    trending: false,
+    inStock: true
   },
   {
     id: 402,
@@ -160,7 +63,8 @@ export const products = [
     rating: 4.6,
     reviews: 45,
     seller: "Творческая мастерская",
-    trending: true
+    trending: true,
+    inStock: true
   },
   {
     id: 403,
@@ -172,9 +76,9 @@ export const products = [
     rating: 4.5,
     reviews: 32,
     seller: "Творческая мастерская",
-    trending: false
+    trending: false,
+    inStock: true
   },
-
   // Бумажная продукция - Бумага копировальная
   {
     id: 501,
@@ -186,7 +90,8 @@ export const products = [
     rating: 4.1,
     reviews: 21,
     seller: "ОфисМаркет",
-    trending: false
+    trending: false,
+    inStock: true
   },
   {
     id: 502,
@@ -198,7 +103,8 @@ export const products = [
     rating: 4.2,
     reviews: 18,
     seller: "ОфисМаркет",
-    trending: false
+    trending: false,
+    inStock: true
   },
   {
     id: 503,
@@ -210,9 +116,9 @@ export const products = [
     rating: 4.4,
     reviews: 26,
     seller: "Канцелярский мир",
-    trending: true
+    trending: true,
+    inStock: true
   },
-
   // Бумажная продукция - Бумага самоклеящаяся
   {
     id: 601,
@@ -224,7 +130,8 @@ export const products = [
     rating: 4.6,
     reviews: 54,
     seller: "ОфисМаркет",
-    trending: true
+    trending: true,
+    inStock: true
   },
   {
     id: 602,
@@ -236,7 +143,8 @@ export const products = [
     rating: 4.5,
     reviews: 37,
     seller: "ОфисМаркет",
-    trending: false
+    trending: false,
+    inStock: true
   },
   {
     id: 603,
@@ -248,9 +156,9 @@ export const products = [
     rating: 4.3,
     reviews: 29,
     seller: "Канцелярский мир",
-    trending: true
+    trending: true,
+    inStock: true
   },
-
   // Бумажная продукция - Бумага формата
   {
     id: 701,
@@ -262,7 +170,8 @@ export const products = [
     rating: 4.8,
     reviews: 126,
     seller: "ОфисМаркет",
-    trending: true
+    trending: true,
+    inStock: true
   },
   {
     id: 702,
@@ -274,7 +183,8 @@ export const products = [
     rating: 4.7,
     reviews: 78,
     seller: "ОфисМаркет",
-    trending: false
+    trending: false,
+    inStock: true
   },
   {
     id: 703,
@@ -286,9 +196,9 @@ export const products = [
     rating: 4.6,
     reviews: 42,
     seller: "Канцелярский мир",
-    trending: true
+    trending: true,
+    inStock: true
   },
-
   // Бумажная продукция - Бумага цветная для принтеров
   {
     id: 801,
@@ -300,7 +210,8 @@ export const products = [
     rating: 4.5,
     reviews: 63,
     seller: "Канцелярский мир",
-    trending: true
+    trending: true,
+    inStock: true
   },
   {
     id: 802,
@@ -312,7 +223,8 @@ export const products = [
     rating: 4.7,
     reviews: 47,
     seller: "Творческая мастерская",
-    trending: false
+    trending: false,
+    inStock: true
   },
   {
     id: 803,
@@ -324,9 +236,9 @@ export const products = [
     rating: 4.4,
     reviews: 35,
     seller: "Творческая мастерская",
-    trending: true
+    trending: true,
+    inStock: true
   },
-
   // Для творчества - Акварель
   {
     id: 901,
@@ -338,7 +250,8 @@ export const products = [
     rating: 4.8,
     reviews: 124,
     seller: "Творческая мастерская",
-    trending: true
+    trending: true,
+    inStock: true
   },
   {
     id: 902,
@@ -350,7 +263,8 @@ export const products = [
     rating: 4.9,
     reviews: 89,
     seller: "Творческая мастерская",
-    trending: true
+    trending: true,
+    inStock: true
   },
   {
     id: 903,
@@ -362,7 +276,8 @@ export const products = [
     rating: 4.9,
     reviews: 67,
     seller: "Творческая мастерская",
-    trending: false
+    trending: false,
+    inStock: true
   },
   {
     id: 904,
@@ -374,9 +289,9 @@ export const products = [
     rating: 4.7,
     reviews: 52,
     seller: "Творческая мастерская",
-    trending: true
+    trending: true,
+    inStock: true
   },
-
   // Для творчества - Акриловые краски
   {
     id: 1001,
@@ -388,7 +303,8 @@ export const products = [
     rating: 4.6,
     reviews: 67,
     seller: "Творческая мастерская",
-    trending: false
+    trending: false,
+    inStock: true
   },
   {
     id: 1002,
@@ -400,7 +316,8 @@ export const products = [
     rating: 4.7,
     reviews: 92,
     seller: "Творческая мастерская",
-    trending: true
+    trending: true,
+    inStock: true
   },
   {
     id: 1003,
@@ -412,7 +329,8 @@ export const products = [
     rating: 4.8,
     reviews: 58,
     seller: "Творческая мастерская",
-    trending: true
+    trending: true,
+    inStock: true
   },
   {
     id: 1004,
@@ -424,9 +342,9 @@ export const products = [
     rating: 4.5,
     reviews: 43,
     seller: "Творческая мастерская",
-    trending: false
+    trending: false,
+    inStock: true
   },
-
   // Для творчества - Аксессуары для творчества
   {
     id: 1101,
@@ -438,7 +356,8 @@ export const products = [
     rating: 4.7,
     reviews: 84,
     seller: "Творческая мастерская",
-    trending: true
+    trending: true,
+    inStock: true
   },
   {
     id: 1102,
@@ -450,7 +369,8 @@ export const products = [
     rating: 4.4,
     reviews: 37,
     seller: "Творческая мастерская",
-    trending: false
+    trending: false,
+    inStock: true
   },
   {
     id: 1103,
@@ -462,7 +382,8 @@ export const products = [
     rating: 4.6,
     reviews: 46,
     seller: "Творческая мастерская",
-    trending: true
+    trending: true,
+    inStock: true
   },
   {
     id: 1104,
@@ -474,9 +395,9 @@ export const products = [
     rating: 4.3,
     reviews: 29,
     seller: "Творческая мастерская",
-    trending: false
+    trending: false,
+    inStock: true
   },
-
   // Для творчества - Восковые карандаши и мелки
   {
     id: 1201,
@@ -488,7 +409,8 @@ export const products = [
     rating: 4.5,
     reviews: 63,
     seller: "Творческая мастерская",
-    trending: true
+    trending: true,
+    inStock: true
   },
   {
     id: 1202,
@@ -500,7 +422,8 @@ export const products = [
     rating: 4.7,
     reviews: 47,
     seller: "Творческая мастерская",
-    trending: false
+    trending: false,
+    inStock: true
   },
   {
     id: 1203,
@@ -512,9 +435,9 @@ export const products = [
     rating: 4.4,
     reviews: 38,
     seller: "Творческая мастерская",
-    trending: true
+    trending: true,
+    inStock: true
   },
-
   // Для творчества - Выжигание
   {
     id: 1301,
@@ -526,7 +449,8 @@ export const products = [
     rating: 4.6,
     reviews: 52,
     seller: "Творческая мастерская",
-    trending: true
+    trending: true,
+    inStock: true
   },
   {
     id: 1302,
@@ -538,7 +462,8 @@ export const products = [
     rating: 4.5,
     reviews: 41,
     seller: "Творческая мастерская",
-    trending: false
+    trending: false,
+    inStock: true
   },
   {
     id: 1303,
@@ -550,9 +475,9 @@ export const products = [
     rating: 4.4,
     reviews: 33,
     seller: "Творческая мастерская",
-    trending: true
+    trending: true,
+    inStock: true
   },
-
   // Для творчества - Вышивка и плетение
   {
     id: 1401,
@@ -564,7 +489,8 @@ export const products = [
     rating: 4.7,
     reviews: 68,
     seller: "Творческая мастерская",
-    trending: true
+    trending: true,
+    inStock: true
   },
   {
     id: 1402,
@@ -576,7 +502,8 @@ export const products = [
     rating: 4.5,
     reviews: 47,
     seller: "Творческая мастерская",
-    trending: false
+    trending: false,
+    inStock: true
   },
   {
     id: 1403,
@@ -588,9 +515,9 @@ export const products = [
     rating: 4.6,
     reviews: 59,
     seller: "Творческая мастерская",
-    trending: true
+    trending: true,
+    inStock: true
   },
-
   // Для творчества - Гравюра
   {
     id: 1501,
@@ -602,7 +529,8 @@ export const products = [
     rating: 4.5,
     reviews: 36,
     seller: "Творческая мастерская",
-    trending: false
+    trending: false,
+    inStock: true
   },
   {
     id: 1502,
@@ -614,7 +542,8 @@ export const products = [
     rating: 4.4,
     reviews: 28,
     seller: "Творческая мастерская",
-    trending: true
+    trending: true,
+    inStock: true
   },
   {
     id: 1503,
@@ -626,9 +555,9 @@ export const products = [
     rating: 4.6,
     reviews: 42,
     seller: "Творческая мастерская",
-    trending: true
+    trending: true,
+    inStock: true
   },
-
   // Для творчества - Гуашь
   {
     id: 1601,
@@ -640,7 +569,8 @@ export const products = [
     rating: 4.7,
     reviews: 74,
     seller: "Творческая мастерская",
-    trending: true
+    trending: true,
+    inStock: true
   },
   {
     id: 1602,
@@ -652,7 +582,8 @@ export const products = [
     rating: 4.8,
     reviews: 58,
     seller: "Творческая мастерская",
-    trending: false
+    trending: false,
+    inStock: true
   },
   {
     id: 1603,
@@ -664,9 +595,9 @@ export const products = [
     rating: 4.9,
     reviews: 46,
     seller: "Творческая мастерская",
-    trending: true
+    trending: true,
+    inStock: true
   },
-
   // Для творчества - Доски для лепки
   {
     id: 1701,
@@ -678,7 +609,8 @@ export const products = [
     rating: 4.4,
     reviews: 39,
     seller: "Творческая мастерская",
-    trending: false
+    trending: false,
+    inStock: true
   },
   {
     id: 1702,
@@ -690,7 +622,8 @@ export const products = [
     rating: 4.5,
     reviews: 32,
     seller: "Творческая мастерская",
-    trending: true
+    trending: true,
+    inStock: true
   },
   {
     id: 1703,
@@ -702,9 +635,9 @@ export const products = [
     rating: 4.3,
     reviews: 27,
     seller: "Творческая мастерская",
-    trending: false
+    trending: false,
+    inStock: true
   },
-
   // Игры - Для компьютера
   {
     id: 1801,
@@ -716,7 +649,8 @@ export const products = [
     rating: 4.5,
     reviews: 156,
     seller: "GameTech",
-    trending: true
+    trending: true,
+    inStock: true
   },
   {
     id: 1802,
@@ -728,7 +662,8 @@ export const products = [
     rating: 4.6,
     reviews: 132,
     seller: "GameTech",
-    trending: true
+    trending: true,
+    inStock: true
   },
   {
     id: 1803,
@@ -740,7 +675,8 @@ export const products = [
     rating: 4.4,
     reviews: 87,
     seller: "GameTech",
-    trending: false
+    trending: false,
+    inStock: true
   },
   {
     id: 1804,
@@ -752,9 +688,9 @@ export const products = [
     rating: 4.5,
     reviews: 94,
     seller: "GameTech",
-    trending: true
+    trending: true,
+    inStock: true
   },
-
   // Канцелярские аксессуары - Папки
   {
     id: 1901,
@@ -766,7 +702,8 @@ export const products = [
     rating: 4.2,
     reviews: 43,
     seller: "ОфисМаркет",
-    trending: false
+    trending: false,
+    inStock: true
   },
   {
     id: 1902,
@@ -778,7 +715,8 @@ export const products = [
     rating: 4.4,
     reviews: 57,
     seller: "ОфисМаркет",
-    trending: true
+    trending: true,
+    inStock: true
   },
   {
     id: 1903,
@@ -790,7 +728,8 @@ export const products = [
     rating: 4.5,
     reviews: 64,
     seller: "ОфисМаркет",
-    trending: true
+    trending: true,
+    inStock: true
   },
   {
     id: 1904,
@@ -802,9 +741,9 @@ export const products = [
     rating: 4.3,
     reviews: 38,
     seller: "ОфисМаркет",
-    trending: false
+    trending: false,
+    inStock: true
   },
-
   // Канцелярские аксессуары - Файлы
   {
     id: 2001,
@@ -816,7 +755,8 @@ export const products = [
     rating: 4.5,
     reviews: 72,
     seller: "ОфисМаркет",
-    trending: true
+    trending: true,
+    inStock: true
   },
   {
     id: 2002,
@@ -828,7 +768,8 @@ export const products = [
     rating: 4.4,
     reviews: 53,
     seller: "ОфисМаркет",
-    trending: false
+    trending: false,
+    inStock: true
   },
   {
     id: 2003,
@@ -840,9 +781,9 @@ export const products = [
     rating: 4.6,
     reviews: 47,
     seller: "ОфисМаркет",
-    trending: true
+    trending: true,
+    inStock: true
   },
-
   // Канцелярские аксессуары - Обложки для документов
   {
     id: 2101,
@@ -854,7 +795,8 @@ export const products = [
     rating: 4.5,
     reviews: 58,
     seller: "ОфисМаркет",
-    trending: true
+    trending: true,
+    inStock: true
   },
   {
     id: 2102,
@@ -866,7 +808,8 @@ export const products = [
     rating: 4.3,
     reviews: 42,
     seller: "ОфисМаркет",
-    trending: false
+    trending: false,
+    inStock: true
   },
   {
     id: 2103,
@@ -878,9 +821,9 @@ export const products = [
     rating: 4.4,
     reviews: 36,
     seller: "ОфисМаркет",
-    trending: true
+    trending: true,
+    inStock: true
   },
-
   // Канцелярские аксессуары - Канцелярские наборы
   {
     id: 2201,
@@ -892,7 +835,8 @@ export const products = [
     rating: 4.7,
     reviews: 64,
     seller: "Канцелярский мир",
-    trending: true
+    trending: true,
+    inStock: true
   },
   {
     id: 2202,
@@ -904,7 +848,8 @@ export const products = [
     rating: 4.6,
     reviews: 78,
     seller: "Канцелярский мир",
-    trending: false
+    trending: false,
+    inStock: true
   },
   {
     id: 2203,
@@ -916,9 +861,9 @@ export const products = [
     rating: 4.4,
     reviews: 43,
     seller: "Канцелярский мир",
-    trending: true
+    trending: true,
+    inStock: true
   },
-
   // Канцелярские аксессуары - Подставки для ручек
   {
     id: 2301,
@@ -930,7 +875,8 @@ export const products = [
     rating: 4.5,
     reviews: 47,
     seller: "Канцелярский мир",
-    trending: true
+    trending: true,
+    inStock: true
   },
   {
     id: 2302,
@@ -942,7 +888,8 @@ export const products = [
     rating: 4.6,
     reviews: 39,
     seller: "Канцелярский мир",
-    trending: false
+    trending: false,
+    inStock: true
   },
   {
     id: 2303,
@@ -954,9 +901,9 @@ export const products = [
     rating: 4.4,
     reviews: 32,
     seller: "Канцелярский мир",
-    trending: true
+    trending: true,
+    inStock: true
   },
-
   // Канцелярские аксессуары - Лотки для бумаг
   {
     id: 2401,
@@ -968,7 +915,8 @@ export const products = [
     rating: 4.3,
     reviews: 41,
     seller: "ОфисМаркет",
-    trending: false
+    trending: false,
+    inStock: true
   },
   {
     id: 2402,
@@ -980,7 +928,8 @@ export const products = [
     rating: 4.5,
     reviews: 53,
     seller: "ОфисМаркет",
-    trending: true
+    trending: true,
+    inStock: true
   },
   {
     id: 2403,
@@ -992,9 +941,9 @@ export const products = [
     rating: 4.6,
     reviews: 47,
     seller: "ОфисМаркет",
-    trending: true
+    trending: true,
+    inStock: true
   },
-
   // Офисная техника - Аксессуары для мобильного телефона
   {
     id: 2501,
@@ -1006,7 +955,8 @@ export const products = [
     rating: 4.4,
     reviews: 68,
     seller: "TechOffice",
-    trending: true
+    trending: true,
+    inStock: true
   },
   {
     id: 2502,
@@ -1018,7 +968,8 @@ export const products = [
     rating: 4.3,
     reviews: 52,
     seller: "TechOffice",
-    trending: false
+    trending: false,
+    inStock: true
   },
   {
     id: 2503,
@@ -1030,9 +981,9 @@ export const products = [
     rating: 4.6,
     reviews: 94,
     seller: "TechOffice",
-    trending: true
+    trending: true,
+    inStock: true
   },
-
   // Офисная техника - Батарейки
   {
     id: 2601,
@@ -1044,7 +995,8 @@ export const products = [
     rating: 4.5,
     reviews: 87,
     seller: "TechOffice",
-    trending: true
+    trending: true,
+    inStock: true
   },
   {
     id: 2602,
@@ -1056,7 +1008,8 @@ export const products = [
     rating: 4.4,
     reviews: 73,
     seller: "TechOffice",
-    trending: false
+    trending: false,
+    inStock: true
   },
   {
     id: 2603,
@@ -1068,9 +1021,9 @@ export const products = [
     rating: 4.3,
     reviews: 48,
     seller: "TechOffice",
-    trending: true
+    trending: true,
+    inStock: true
   },
-
   // Офисная техника - Ламинаторы
   {
     id: 2701,
@@ -1082,7 +1035,8 @@ export const products = [
     rating: 4.6,
     reviews: 42,
     seller: "TechOffice",
-    trending: true
+    trending: true,
+    inStock: true
   },
   {
     id: 2702,
@@ -1094,7 +1048,8 @@ export const products = [
     rating: 4.5,
     reviews: 37,
     seller: "TechOffice",
-    trending: false
+    trending: false,
+    inStock: true
   },
   {
     id: 2703,
@@ -1106,9 +1061,9 @@ export const products = [
     rating: 4.4,
     reviews: 29,
     seller: "TechOffice",
-    trending: true
+    trending: true,
+    inStock: true
   },
-
   // Офисная техника - Мыши и клавиатуры
   {
     id: 2801,
@@ -1120,7 +1075,8 @@ export const products = [
     rating: 4.5,
     reviews: 78,
     seller: "TechOffice",
-    trending: true
+    trending: true,
+    inStock: true
   },
   {
     id: 2802,
@@ -1132,7 +1088,8 @@ export const products = [
     rating: 4.4,
     reviews: 64,
     seller: "TechOffice",
-    trending: false
+    trending: false,
+    inStock: true
   },
   {
     id: 2803,
@@ -1144,9 +1101,9 @@ export const products = [
     rating: 4.6,
     reviews: 89,
     seller: "TechOffice",
-    trending: true
+    trending: true,
+    inStock: true
   },
-
   // Офисная техника - Настольные лампы
   {
     id: 2901,
@@ -1158,7 +1115,8 @@ export const products = [
     rating: 4.7,
     reviews: 96,
     seller: "TechOffice",
-    trending: true
+    trending: true,
+    inStock: true
   },
   {
     id: 2902,
@@ -1170,7 +1128,8 @@ export const products = [
     rating: 4.6,
     reviews: 73,
     seller: "TechOffice",
-    trending: false
+    trending: false,
+    inStock: true
   },
   {
     id: 2903,
@@ -1182,9 +1141,9 @@ export const products = [
     rating: 4.5,
     reviews: 68,
     seller: "TechOffice",
-    trending: true
+    trending: true,
+    inStock: true
   },
-
   // Офисная техника - Переплетная машина
   {
     id: 3001,
@@ -1196,7 +1155,8 @@ export const products = [
     rating: 4.4,
     reviews: 28,
     seller: "TechOffice",
-    trending: false
+    trending: false,
+    inStock: true
   },
   {
     id: 3002,
@@ -1208,7 +1168,8 @@ export const products = [
     rating: 4.3,
     reviews: 32,
     seller: "TechOffice",
-    trending: true
+    trending: true,
+    inStock: true
   },
   {
     id: 3003,
@@ -1220,9 +1181,9 @@ export const products = [
     rating: 4.5,
     reviews: 26,
     seller: "TechOffice",
-    trending: false
+    trending: false,
+    inStock: true
   },
-
   // Офисная техника - Принтеры и МФУ
   {
     id: 3101,
@@ -1234,7 +1195,8 @@ export const products = [
     rating: 4.7,
     reviews: 87,
     seller: "TechOffice",
-    trending: true
+    trending: true,
+    inStock: true
   },
   {
     id: 3102,
@@ -1246,7 +1208,8 @@ export const products = [
     rating: 4.5,
     reviews: 64,
     seller: "TechOffice",
-    trending: false
+    trending: false,
+    inStock: true
   },
   {
     id: 3103,
@@ -1258,9 +1221,9 @@ export const products = [
     rating: 4.8,
     reviews: 52,
     seller: "TechOffice",
-    trending: true
+    trending: true,
+    inStock: true
   },
-
   // Офисная техника - Резак
   {
     id: 3201,
@@ -1272,7 +1235,8 @@ export const products = [
     rating: 4.5,
     reviews: 43,
     seller: "TechOffice",
-    trending: true
+    trending: true,
+    inStock: true
   },
   {
     id: 3202,
@@ -1284,7 +1248,8 @@ export const products = [
     rating: 4.4,
     reviews: 37,
     seller: "TechOffice",
-    trending: false
+    trending: false,
+    inStock: true
   },
   {
     id: 3203,
@@ -1296,9 +1261,9 @@ export const products = [
     rating: 4.3,
     reviews: 29,
     seller: "TechOffice",
-    trending: true
+    trending: true,
+    inStock: true
   },
-
   // Офисные товары - Степлеры
   {
     id: 3301,
@@ -1310,7 +1275,8 @@ export const products = [
     rating: 4.3,
     reviews: 38,
     seller: "ОфисМаркет",
-    trending: false
+    trending: false,
+    inStock: true
   },
   {
     id: 3302,
@@ -1322,7 +1288,8 @@ export const products = [
     rating: 4.1,
     reviews: 29,
     seller: "ОфисМаркет",
-    trending: true
+    trending: true,
+    inStock: true
   },
   {
     id: 3303,
@@ -1334,9 +1301,9 @@ export const products = [
     rating: 4.6,
     reviews: 42,
     seller: "ОфисМаркет",
-    trending: true
+    trending: true,
+    inStock: true
   },
-
   // Офисные товары - Дыроколы
   {
     id: 3401,
@@ -1348,7 +1315,8 @@ export const products = [
     rating: 4.4,
     reviews: 47,
     seller: "ОфисМаркет",
-    trending: false
+    trending: false,
+    inStock: true
   },
   {
     id: 3402,
@@ -1360,7 +1328,8 @@ export const products = [
     rating: 4.3,
     reviews: 32,
     seller: "ОфисМаркет",
-    trending: true
+    trending: true,
+    inStock: true
   },
   {
     id: 3403,
@@ -1372,9 +1341,9 @@ export const products = [
     rating: 4.2,
     reviews: 28,
     seller: "ОфисМаркет",
-    trending: false
+    trending: false,
+    inStock: true
   },
-
   // Офисные товары - Скрепки
   {
     id: 3501,
@@ -1386,7 +1355,8 @@ export const products = [
     rating: 4.5,
     reviews: 63,
     seller: "ОфисМаркет",
-    trending: true
+    trending: true,
+    inStock: true
   },
   {
     id: 3502,
@@ -1398,7 +1368,8 @@ export const products = [
     rating: 4.4,
     reviews: 48,
     seller: "ОфисМаркет",
-    trending: false
+    trending: false,
+    inStock: true
   },
   {
     id: 3503,
@@ -1410,9 +1381,9 @@ export const products = [
     rating: 4.3,
     reviews: 37,
     seller: "ОфисМаркет",
-    trending: true
+    trending: true,
+    inStock: true
   },
-
   // Офисные товары - Корректоры
   {
     id: 3601,
@@ -1424,7 +1395,8 @@ export const products = [
     rating: 4.4,
     reviews: 52,
     seller: "ОфисМаркет",
-    trending: true
+    trending: true,
+    inStock: true
   },
   {
     id: 3602,
@@ -1436,7 +1408,8 @@ export const products = [
     rating: 4.3,
     reviews: 43,
     seller: "ОфисМаркет",
-    trending: false
+    trending: false,
+    inStock: true
   },
   {
     id: 3603,
@@ -1448,9 +1421,9 @@ export const products = [
     rating: 4.5,
     reviews: 58,
     seller: "ОфисМаркет",
-    trending: true
+    trending: true,
+    inStock: true
   },
-
   // Офисные товары - Клей
   {
     id: 3701,
@@ -1462,7 +1435,8 @@ export const products = [
     rating: 4.6,
     reviews: 74,
     seller: "ОфисМаркет",
-    trending: true
+    trending: true,
+    inStock: true
   },
   {
     id: 3702,
@@ -1474,7 +1448,8 @@ export const products = [
     rating: 4.5,
     reviews: 63,
     seller: "ОфисМаркет",
-    trending: false
+    trending: false,
+    inStock: true
   },
   {
     id: 3703,
@@ -1486,9 +1461,9 @@ export const products = [
     rating: 4.4,
     reviews: 52,
     seller: "ОфисМаркет",
-    trending: true
+    trending: true,
+    inStock: true
   },
-
   // Офисные товары - Скотч
   {
     id: 3801,
@@ -1500,7 +1475,8 @@ export const products = [
     rating: 4.5,
     reviews: 68,
     seller: "ОфисМаркет",
-    trending: true
+    trending: true,
+    inStock: true
   },
   {
     id: 3802,
@@ -1512,7 +1488,8 @@ export const products = [
     rating: 4.4,
     reviews: 47,
     seller: "ОфисМаркет",
-    trending: false
+    trending: false,
+    inStock: true
   },
   {
     id: 3803,
@@ -1524,9 +1501,9 @@ export const products = [
     rating: 4.6,
     reviews: 53,
     seller: "ОфисМаркет",
-    trending: true
+    trending: true,
+    inStock: true
   },
-
   // Письменные принадлежности - Ручки
   {
     id: 3901,
@@ -1538,7 +1515,8 @@ export const products = [
     rating: 4.4,
     reviews: 95,
     seller: "Канцелярский мир",
-    trending: true
+    trending: true,
+    inStock: true
   },
   {
     id: 3902,
@@ -1550,7 +1528,8 @@ export const products = [
     rating: 4.6,
     reviews: 112,
     seller: "Канцелярский мир",
-    trending: true
+    trending: true,
+    inStock: true
   },
   {
     id: 3903,
@@ -1562,7 +1541,8 @@ export const products = [
     rating: 4.7,
     reviews: 64,
     seller: "Канцелярский мир",
-    trending: false
+    trending: false,
+    inStock: true
   },
   {
     id: 3904,
@@ -1574,9 +1554,9 @@ export const products = [
     rating: 4.5,
     reviews: 47,
     seller: "Канцелярский мир",
-    trending: true
+    trending: true,
+    inStock: true
   },
-
   // Письменные принадлежности - Карандаши
   {
     id: 4001,
@@ -1588,7 +1568,8 @@ export const products = [
     rating: 4.7,
     reviews: 88,
     seller: "Канцелярский мир",
-    trending: true
+    trending: true,
+    inStock: true
   },
   {
     id: 4002,
@@ -1600,7 +1581,8 @@ export const products = [
     rating: 4.6,
     reviews: 74,
     seller: "Канцелярский мир",
-    trending: false
+    trending: false,
+    inStock: true
   },
   {
     id: 4003,
@@ -1612,9 +1594,9 @@ export const products = [
     rating: 4.5,
     reviews: 63,
     seller: "Канцелярский мир",
-    trending: true
+    trending: true,
+    inStock: true
   },
-
   // Письменные принадлежности - Маркеры
   {
     id: 4101,
@@ -1626,7 +1608,8 @@ export const products = [
     rating: 4.6,
     reviews: 57,
     seller: "Канцелярский мир",
-    trending: true
+    trending: true,
+    inStock: true
   },
   {
     id: 4102,
@@ -1638,7 +1621,8 @@ export const products = [
     rating: 4.5,
     reviews: 48,
     seller: "Канцелярский мир",
-    trending: false
+    trending: false,
+    inStock: true
   },
   {
     id: 4103,
@@ -1650,9 +1634,9 @@ export const products = [
     rating: 4.7,
     reviews: 69,
     seller: "Канцелярский мир",
-    trending: true
+    trending: true,
+    inStock: true
   },
-
   // Письменные принадлежности - Текстовыделители
   {
     id: 4201,
@@ -1664,7 +1648,8 @@ export const products = [
     rating: 4.5,
     reviews: 73,
     seller: "Канцелярский мир",
-    trending: true
+    trending: true,
+    inStock: true
   },
   {
     id: 4202,
@@ -1676,7 +1661,8 @@ export const products = [
     rating: 4.6,
     reviews: 64,
     seller: "Канцелярский мир",
-    trending: false
+    trending: false,
+    inStock: true
   },
   {
     id: 4203,
@@ -1688,9 +1674,9 @@ export const products = [
     rating: 4.4,
     reviews: 42,
     seller: "Канцелярский мир",
-    trending: true
+    trending: true,
+    inStock: true
   },
-
   // Письменные принадлежности - Стержни для ручек
   {
     id: 4301,
@@ -1702,7 +1688,8 @@ export const products = [
     rating: 4.4,
     reviews: 53,
     seller: "Канцелярский мир",
-    trending: false
+    trending: false,
+    inStock: true
   },
   {
     id: 4302,
@@ -1714,7 +1701,8 @@ export const products = [
     rating: 4.5,
     reviews: 47,
     seller: "Канцелярский мир",
-    trending: true
+    trending: true,
+    inStock: true
   },
   {
     id: 4303,
@@ -1726,9 +1714,9 @@ export const products = [
     rating: 4.3,
     reviews: 38,
     seller: "Канцелярский мир",
-    trending: false
+    trending: false,
+    inStock: true
   },
-
   // Письменные принадлежности - Тушь
   {
     id: 4401,
@@ -1740,7 +1728,8 @@ export const products = [
     rating: 4.6,
     reviews: 37,
     seller: "Канцелярский мир",
-    trending: true
+    trending: true,
+    inStock: true
   },
   {
     id: 4402,
@@ -1750,11 +1739,12 @@ export const products = [
     image: "https://picsum.photos/seed/ink2/200/200",
     category: "Тушь",
     rating: 4.5,
-     reviews: 37,
+    reviews: 37,
     seller: "Канцелярский мир",
-    trending: true
+    trending: true,
+    inStock: true
   },
- 
+  // Системы архивации - Архивные коробки
   {
     id: 4403,
     name: "Архивная коробка А4",
@@ -1765,7 +1755,8 @@ export const products = [
     rating: 4.5,
     reviews: 48,
     seller: "ОфисМаркет",
-    trending: true
+    trending: true,
+    inStock: true
   },
   {
     id: 4404,
@@ -1777,7 +1768,8 @@ export const products = [
     rating: 4.6,
     reviews: 52,
     seller: "ОфисМаркет",
-    trending: false
+    trending: false,
+    inStock: true
   },
   {
     id: 4405,
@@ -1789,7 +1781,8 @@ export const products = [
     rating: 4.4,
     reviews: 39,
     seller: "ОфисМаркет",
-    trending: true
+    trending: true,
+    inStock: true
   },
   {
     id: 4406,
@@ -1801,9 +1794,9 @@ export const products = [
     rating: 4.3,
     reviews: 35,
     seller: "ОфисМаркет",
-    trending: false
+    trending: false,
+    inStock: true
   },
-
   // Системы архивации - Папки с зажимом
   {
     id: 4407,
@@ -1815,7 +1808,8 @@ export const products = [
     rating: 4.4,
     reviews: 46,
     seller: "ОфисМаркет",
-    trending: true
+    trending: true,
+    inStock: true
   },
   {
     id: 4408,
@@ -1827,7 +1821,8 @@ export const products = [
     rating: 4.5,
     reviews: 51,
     seller: "ОфисМаркет",
-    trending: false
+    trending: false,
+    inStock: true
   },
   {
     id: 4409,
@@ -1837,921 +1832,10 @@ export const products = [
     image: "https://picsum.photos/seed/clipfolder3/200/200",
     category: "Папки с зажимом",
     rating: 4.3,
-    reviews: 38,
+    reviews: 33,
     seller: "ОфисМаркет",
-    trending: true
-  },
-  {
-    id: 4410,
-    name: "Папка с двойным зажимом",
-    description: "Папка с двумя зажимами для надежного крепления",
-    price: "25 000 so'm",
-    image: "https://picsum.photos/seed/clipfolder4/200/200",
-    category: "Папки с зажимом",
-    rating: 4.6,
-    reviews: 44,
-    seller: "ОфисМаркет",
-    trending: false
-  },
-
-  // Системы архивации - Регистраторы
-  {
-    id: 4411,
-    name: "Регистратор А4 с арочным механизмом",
-    description: "Папка-регистратор для большого объема документов",
-    price: "30 000 so'm",
-    image: "https://picsum.photos/seed/register1/200/200",
-    category: "Регистраторы",
-    rating: 4.7,
-    reviews: 62,
-    seller: "ОфисМаркет",
-    trending: true
-  },
-  {
-    id: 4412,
-    name: "Регистратор цветной",
-    description: "Яркая папка-регистратор для сортировки документов",
-    price: "35 000 so'm",
-    image: "https://picsum.photos/seed/register2/200/200",
-    category: "Регистраторы",
-    rating: 4.5,
-    reviews: 49,
-    seller: "ОфисМаркет",
-    trending: false
-  },
-  {
-    id: 4413,
-    name: "Регистратор узкий",
-    description: "Компактный регистратор для небольших объемов",
-    price: "25 000 so'm",
-    image: "https://picsum.photos/seed/register3/200/200",
-    category: "Регистраторы",
-    rating: 4.4,
-    reviews: 41,
-    seller: "ОфисМаркет",
-    trending: true
-  },
-  {
-    id: 4414,
-    name: "Регистратор с покрытием",
-    description: "Папка-регистратор с ламинированным покрытием",
-    price: "40 000 so'm",
-    image: "https://picsum.photos/seed/register4/200/200",
-    category: "Регистраторы",
-    rating: 4.6,
-    reviews: 53,
-    seller: "ОфисМаркет",
-    trending: false
-  },
-
-  // Системы архивации - Разделители
-  {
-    id: 4415,
-    name: "Разделители картонные А4",
-    description: "Набор картонных разделителей для папок",
-    price: "12 000 so'm",
-    image: "https://picsum.photos/seed/divider1/200/200",
-    category: "Разделители",
-    rating: 4.3,
-    reviews: 36,
-    seller: "ОфисМаркет",
-    trending: true
-  },
-  {
-    id: 4416,
-    name: "Разделители пластиковые",
-    description: "Набор пластиковых разделителей с ярлыками",
-    price: "15 000 so'm",
-    image: "https://picsum.photos/seed/divider2/200/200",
-    category: "Разделители",
-    rating: 4.4,
-    reviews: 42,
-    seller: "ОфисМаркет",
-    trending: false
-  },
-  {
-    id: 4417,
-    name: "Разделители с индексами",
-    description: "Разделители с пронумерованными вкладками",
-    price: "18 000 so'm",
-    image: "https://picsum.photos/seed/divider3/200/200",
-    category: "Разделители",
-    rating: 4.5,
-    reviews: 47,
-    seller: "ОфисМаркет",
-    trending: true
-  },
-  {
-    id: 4418,
-    name: "Разделители цветные",
-    description: "Набор цветных разделителей для удобной сортировки",
-    price: "20 000 so'm",
-    image: "https://picsum.photos/seed/divider4/200/200",
-    category: "Разделители",
-    rating: 4.6,
-    reviews: 39,
-    seller: "ОфисМаркет",
-    trending: false
-  },
-
-  // Системы архивации - Индексные карточки
-  {
-    id: 4419,
-    name: "Индексные карточки А6",
-    description: "Набор карточек для каталогов и записей",
-    price: "10 000 so'm",
-    image: "https://picsum.photos/seed/indexcard1/200/200",
-    category: "Индексные карточки",
-    rating: 4.3,
-    reviews: 34,
-    seller: "ОфисМаркет",
-    trending: true
-  },
-  {
-    id: 4420,
-    name: "Индексные карточки с разделителями",
-    description: "Карточки с разделителями для организации записей",
-    price: "15 000 so'm",
-    image: "https://picsum.photos/seed/indexcard2/200/200",
-    category: "Индексные карточки",
-    rating: 4.4,
-    reviews: 38,
-    seller: "ОфисМаркет",
-    trending: false
-  },
-  {
-    id: 4421,
-    name: "Индексные карточки цветные",
-    description: "Набор цветных карточек для заметок",
-    price: "12 000 so'm",
-    image: "https://picsum.photos/seed/indexcard3/200/200",
-    category: "Индексные карточки",
-    rating: 4.5,
-    reviews: 41,
-    seller: "ОфисМаркет",
-    trending: true
-  },
-  {
-    id: 4422,
-    name: "Индексные карточки в коробке",
-    description: "Карточки с коробкой для хранения",
-    price: "20 000 so'm",
-    image: "https://picsum.photos/seed/indexcard4/200/200",
-    category: "Индексные карточки",
-    rating: 4.6,
-    reviews: 36,
-    seller: "ОфисМаркет",
-    trending: false
-  },
-
-  // Спорттовары - Мячи
-  {
-    id: 4423,
-    name: "Футбольный мяч",
-    description: "Мяч для футбола стандартного размера",
-    price: "85 000 so'm",
-    image: "https://picsum.photos/seed/ball1/200/200",
-    category: "Мячи",
-    rating: 4.7,
-    reviews: 72,
-    seller: "SportShop",
-    trending: true
-  },
-  {
-    id: 4424,
-    name: "Баскетбольный мяч",
-    description: "Профессиональный мяч для баскетбола",
-    price: "95 000 so'm",
-    image: "https://picsum.photos/seed/ball2/200/200",
-    category: "Мячи",
-    rating: 4.6,
-    reviews: 65,
-    seller: "SportShop",
-    trending: false
-  },
-  {
-    id: 4425,
-    name: "Волейбольный мяч",
-    description: "Мяч для волейбола с мягким покрытием",
-    price: "75 000 so'm",
-    image: "https://picsum.photos/seed/ball3/200/200",
-    category: "Мячи",
-    rating: 4.5,
-    reviews: 58,
-    seller: "SportShop",
-    trending: true
-  },
-  {
-    id: 4426,
-    name: "Мяч для фитнеса",
-    description: "Большой мяч для фитнеса и йоги",
-    price: "120 000 so'm",
-    image: "https://picsum.photos/seed/ball4/200/200",
-    category: "Мячи",
-    rating: 4.8,
-    reviews: 67,
-    seller: "SportShop",
-    trending: true
-  },
-
-  // Спорттовары - Скакалки
-  {
-    id: 4427,
-    name: "Скакалка с утяжелением",
-    description: "Скакалка с утяжеленными ручками для тренировок",
-    price: "45 000 so'm",
-    image: "https://picsum.photos/seed/jumprope1/200/200",
-    category: "Скакалки",
-    rating: 4.6,
-    reviews: 53,
-    seller: "SportShop",
-    trending: true
-  },
-  {
-    id: 4428,
-    name: "Скакалка скоростная",
-    description: "Скакалка для интенсивных кардиотренировок",
-    price: "35 000 so'm",
-    image: "https://picsum.photos/seed/jumprope2/200/200",
-    category: "Скакалки",
-    rating: 4.5,
-    reviews: 48,
-    seller: "SportShop",
-    trending: false
-  },
-  {
-    id: 4429,
-    name: "Скакалка с счетчиком прыжков",
-    description: "Скакалка с цифровым счетчиком прыжков",
-    price: "65 000 so'm",
-    image: "https://picsum.photos/seed/jumprope3/200/200",
-    category: "Скакалки",
-    rating: 4.7,
-    reviews: 62,
-    seller: "SportShop",
-    trending: true
-  },
-  {
-    id: 4430,
-    name: "Скакалка детская",
-    description: "Легкая скакалка для детей",
-    price: "25 000 so'm",
-    image: "https://picsum.photos/seed/jumprope4/200/200",
-    category: "Скакалки",
-    rating: 4.4,
-    reviews: 39,
-    seller: "SportShop",
-    trending: false
-  },
-
-  // Спорттовары - Гантели
-  {
-    id: 4431,
-    name: "Гантели 2 кг",
-    description: "Пара гантелей весом 2 кг для фитнеса",
-    price: "50 000 so'm",
-    image: "https://picsum.photos/seed/dumbbell1/200/200",
-    category: "Гантели",
-    rating: 4.6,
-    reviews: 55,
-    seller: "SportShop",
-    trending: true
-  },
-  {
-    id: 4432,
-    name: "Гантели разборные",
-    description: "Набор разборных гантелей до 10 кг",
-    price: "150 000 so'm",
-    image: "https://picsum.photos/seed/dumbbell2/200/200",
-    category: "Гантели",
-    rating: 4.7,
-    reviews: 68,
-    seller: "SportShop",
-    trending: true
-  },
-  {
-    id: 4433,
-    name: "Гантели виниловые 1 кг",
-    description: "Гантели с виниловым покрытием для удобства",
-    price: "35 000 so'm",
-    image: "https://picsum.photos/seed/dumbbell3/200/200",
-    category: "Гантели",
-    rating: 4.5,
-    reviews: 47,
-    seller: "SportShop",
-    trending: false
-  },
-  {
-    id: 4434,
-    name: "Гантели 5 кг",
-    description: "Пара гантелей весом 5 кг для силовых тренировок",
-    price: "80 000 so'm",
-    image: "https://picsum.photos/seed/dumbbell4/200/200",
-    category: "Гантели",
-    rating: 4.6,
-    reviews: 59,
-    seller: "SportShop",
-    trending: true
-  },
-
-  // Спорттовары - Спортивные сумки
-  {
-    id: 4435,
-    name: "Спортивная сумка компактная",
-    description: "Небольшая сумка для тренировок",
-    price: "85 000 so'm",
-    image: "https://picsum.photos/seed/sportbag1/200/200",
-    category: "Спортивные сумки",
-    rating: 4.5,
-    reviews: 63,
-    seller: "SportShop",
-    trending: true
-  },
-  {
-    id: 4436,
-    name: "Спортивная сумка с отделением для обуви",
-    description: "Сумка с отдельным отсеком для спортивной обуви",
-    price: "120 000 so'm",
-    image: "https://picsum.photos/seed/sportbag2/200/200",
-    category: "Спортивные сумки",
-    rating: 4.7,
-    reviews: 71,
-    seller: "SportShop",
-    trending: true
-  },
-  {
-    id: 4437,
-    name: "Рюкзак спортивный",
-    description: "Удобный спортивный рюкзак для активного отдыха",
-    price: "95 000 so'm",
-    image: "https://picsum.photos/seed/sportbag3/200/200",
-    category: "Спортивные сумки",
-    rating: 4.6,
-    reviews: 58,
-    seller: "SportShop",
-    trending: false
-  },
-  {
-    id: 4438,
-    name: "Спортивная сумка водонепроницаемая",
-    description: "Сумка для спорта с водонепроницаемым покрытием",
-    price: "130 000 so'm",
-    image: "https://picsum.photos/seed/sportbag4/200/200",
-    category: "Спортивные сумки",
-    rating: 4.8,
-    reviews: 66,
-    seller: "SportShop",
-    trending: true
-  },
-
-  // Спорттовары - Фитнес-аксессуары
-  {
-    id: 4439,
-    name: "Коврик для йоги",
-    description: "Противоскользящий коврик для йоги и фитнеса",
-    price: "65 000 so'm",
-    image: "https://picsum.photos/seed/fitness1/200/200",
-    category: "Фитнес-аксессуары",
-    rating: 4.7,
-    reviews: 74,
-    seller: "SportShop",
-    trending: true
-  },
-  {
-    id: 4440,
-    name: "Эспандер для рук",
-    description: "Компактный эспандер для тренировки кистей",
-    price: "20 000 so'm",
-    image: "https://picsum.photos/seed/fitness2/200/200",
-    category: "Фитнес-аксессары",
-    rating: 4.4,
-    reviews: 49,
-    seller: "SportShop",
-    trending: false
-  },
-  {
-    id: 4441,
-    name: "Ремни для фитнеса",
-    description: "Набор ремней для функциональных тренировок",
-    price: "55 000 so'm",
-    image: "https://picsum.photos/seed/fitness3/200/200",
-    category: "Фитнес-аксессары",
-    rating: 4.6,
-    reviews: 53,
-    seller: "SportShop",
-    trending: true
-  },
-  {
-    id: 4442,
-    name: "Петли для тренировок",
-    description: "Система подвесных петель для фитнеса",
-    price: "95 000 so'm",
-    image: "https://picsum.photos/seed/fitness4/200/200",
-    category: "Фитнес-аксессары",
-    rating: 4.8,
-    reviews: 61,
-    seller: "SportShop",
-    trending: true
-  },
-
-  // Школьные принадлежности - Пеналы
-  {
-    id: 4443,
-    name: "Пенал мягкий",
-    description: "Мягкий пенал для школьных принадлежностей",
-    price: "15 000 so'm",
-    image: "https://picsum.photos/seed/pencilcase1/200/200",
-    category: "Пеналы",
-    rating: 4.4,
-    reviews: 52,
-    seller: "Канцелярский мир",
-    trending: true
-  },
-  {
-    id: 4444,
-    name: "Пенал с отделениями",
-    description: "Пенал с несколькими отделениями для организации",
-    price: "25 000 so'm",
-    image: "https://picsum.photos/seed/pencilcase2/200/200",
-    category: "Пеналы",
-    rating: 4.5,
-    reviews: 47,
-    seller: "Канцелярский мир",
-    trending: false
-  },
-  {
-    id: 4445,
-    name: "Пенал жесткий",
-    description: "Прочный пенал с жестким корпусом",
-    price: "30 000 so'm",
-    image: "https://picsum.photos/seed/pencilcase3/200/200",
-    category: "Пеналы",
-    rating: 4.6,
-    reviews: 55,
-    seller: "Канцелярский мир",
-    trending: true
-  },
-  {
-    id: 4446,
-    name: "Пенал с рисунком",
-    description: "Пенал с ярким дизайном для детей",
-    price: "20 000 so'm",
-    image: "https://picsum.photos/seed/pencilcase4/200/200",
-    category: "Пеналы",
-    rating: 4.3,
-    reviews: 41,
-    seller: "Канцелярский мир",
-    trending: true
-  },
-
-  // Школьные принадлежности - Тетради
-  {
-    id: 4447,
-    name: "Тетрадь 12 листов",
-    description: "Тетрадь в клетку для школьников",
-    price: "5 000 so'm",
-    image: "https://picsum.photos/seed/notebook1/200/200",
-    category: "Тетради",
-    rating: 4.4,
-    reviews: 68,
-    seller: "Канцелярский мир",
-    trending: true
-  },
-  {
-    id: 4448,
-    name: "Тетрадь 48 листов",
-    description: "Тетрадь в линию для старших классов",
-    price: "12 000 so'm",
-    image: "https://picsum.photos/seed/notebook2/200/200",
-    category: "Тетради",
-    rating: 4.5,
-    reviews: 72,
-    seller: "Канцелярский мир",
-    trending: false
-  },
-  {
-    id: 4449,
-    name: "Тетрадь для черновиков",
-    description: "Тетрадь без обложки для черновых записей",
-    price: "8 000 so'm",
-    image: "https://picsum.photos/seed/notebook3/200/200",
-    category: "Тетради",
-    rating: 4.3,
-    reviews: 59,
-    seller: "Канцелярский мир",
-    trending: true
-  },
-  {
-    id: 4450,
-    name: "Тетрадь с твердой обложкой",
-    description: "Прочная тетрадь для длительного использования",
-    price: "15 000 so'm",
-    image: "https://picsum.photos/seed/notebook4/200/200",
-    category: "Тетради",
-    rating: 4.6,
-    reviews: 64,
-    seller: "Канцелярский мир",
-    trending: false
-  },
-
-  // Школьные принадлежности - Альбомы для рисования
-  {
-    id: 4451,
-    name: "Альбом для рисования А4",
-    description: "Альбом с плотной бумагой для рисования",
-    price: "20 000 so'm",
-    image: "https://picsum.photos/seed/sketchbook1/200/200",
-    category: "Альбомы для рисования",
-    rating: 4.6,
-    reviews: 58,
-    seller: "Канцелярский мир",
-    trending: true
-  },
-  {
-    id: 4452,
-    name: "Альбом для рисования А3",
-    description: "Большой альбом для художественных работ",
-    price: "30 000 so'm",
-    image: "https://picsum.photos/seed/sketchbook2/200/200",
-    category: "Альбомы для рисования",
-    rating: 4.7,
-    reviews: 62,
-    seller: "Канцелярский мир",
-    trending: false
-  },
-  {
-    id: 4453,
-    name: "Альбом для акварели",
-    description: "Специальный альбом для акварельной живописи",
-    price: "35 000 so'm",
-    image: "https://picsum.photos/seed/sketchbook3/200/200",
-    category: "Альбомы для рисования",
-    rating: 4.8,
-    reviews: 67,
-    seller: "Канцелярский мир",
-    trending: true
-  },
-  {
-    id: 4454,
-    name: "Альбом для эскизов",
-    description: "Компактный альбом для быстрых эскизов",
-    price: "15 000 so'm",
-    image: "https://picsum.photos/seed/sketchbook4/200/200",
-    category: "Альбомы для рисования",
-    rating: 4.5,
-    reviews: 53,
-    seller: "Канцелярский мир",
-    trending: false
-  },
-
-  // Школьные принадлежности - Цветная бумага
-  {
-    id: 4455,
-    name: "Цветная бумага А4",
-    description: "Набор цветной бумаги для детского творчества",
-    price: "15 000 so'm",
-    image: "https://picsum.photos/seed/colorpaper1/200/200",
-    category: "Цветная бумага",
-    rating: 4.5,
-    reviews: 61,
-    seller: "Канцелярский мир",
-    trending: true
-  },
-  {
-    id: 4456,
-    name: "Цветная бумага двусторонняя",
-    description: "Набор двусторонней цветной бумаги",
-    price: "20 000 so'm",
-    image: "https://picsum.photos/seed/colorpaper2/200/200",
-    category: "Цветная бумага",
-    rating: 4.6,
-    reviews: 57,
-    seller: "Канцелярский мир",
-    trending: false
-  },
-  {
-    id: 4457,
-    name: "Цветная бумага с узорами",
-    description: "Набор бумаги с декоративными узорами",
-    price: "25 000 so'm",
-    image: "https://picsum.photos/seed/colorpaper3/200/200",
-    category: "Цветная бумага",
-    rating: 4.7,
-    reviews: 63,
-    seller: "Канцелярский мир",
-    trending: true
-  },
-  {
-    id: 4458,
-    name: "Цветная бумага глянцевая",
-    description: "Набор глянцевой бумаги для поделок",
-    price: "22 000 so'm",
-    image: "https://picsum.photos/seed/colorpaper4/200/200",
-    category: "Цветная бумага",
-    rating: 4.5,
-    reviews: 49,
-    seller: "Канцелярский мир",
-    trending: false
-  },
-
-  // Школьные принадлежности - Пластилин
-  {
-    id: 4459,
-    name: "Пластилин 12 цветов",
-    description: "Набор пластилина для детского творчества",
-    price: "15 000 so'm",
-    image: "https://picsum.photos/seed/clay1/200/200",
-    category: "Пластилин",
-    rating: 4.6,
-    reviews: 66,
-    seller: "Канцелярский мир",
-    trending: true
-  },
-  {
-    id: 4460,
-    name: "Пластилин мягкий",
-    description: "Мягкий пластилин для легкого лепления",
-    price: "20 000 so'm",
-    image: "https://picsum.photos/seed/clay2/200/200",
-    category: "Пластилин",
-    rating: 4.5,
-    reviews: 58,
-    seller: "Канцелярский мир",
-    trending: false
-  },
-  {
-    id: 4461,
-    name: "Пластилин с блестками",
-    description: "Набор пластилина с блестящим эффектом",
-    price: "25 000 so'm",
-    image: "https://picsum.photos/seed/clay3/200/200",
-    category: "Пластилин",
-    rating: 4.7,
-    reviews: 62,
-    seller: "Канцелярский мир",
-    trending: true
-  },
-  {
-    id: 4462,
-    name: "Пластилин профессиональный",
-    description: "Пластилин для сложных скульптурных работ",
-    price: "30 000 so'm",
-    image: "https://picsum.photos/seed/clay4/200/200",
-    category: "Пластилин",
-    rating: 4.8,
-    reviews: 55,
-    seller: "Канцелярский мир",
-    trending: false
-  },
-
-  // Школьные принадлежности - Школьные ранцы
-  {
-    id: 4463,
-    name: "Школьный рюкзак детский",
-    description: "Легкий рюкзак для младших школьников",
-    price: "150 000 so'm",
-    image: "https://picsum.photos/seed/backpack1/200/200",
-    category: "Школьные ранцы",
-    rating: 4.7,
-    reviews: 78,
-    seller: "Канцелярский мир",
-    trending: true
-  },
-  {
-    id: 4464,
-    name: "Рюкзак с ортопедической спинкой",
-    description: "Рюкзак с поддержкой спины для школьников",
-    price: "200 000 so'm",
-    image: "https://picsum.photos/seed/backpack2/200/200",
-    category: "Школьные ранцы",
-    rating: 4.8,
-    reviews: 85,
-    seller: "Канцелярский мир",
-    trending: true
-  },
-  {
-    id: 4465,
-    name: "Школьный рюкзак подростковый",
-    description: "Стильный рюкзак для старших школьников",
-    price: "180 000 so'm",
-    image: "https://picsum.photos/seed/backpack3/200/200",
-    category: "Школьные ранцы",
-    rating: 4.6,
-    reviews: 71,
-    seller: "Канцелярский мир",
-    trending: false
-  },
-  {
-    id: 4466,
-    name: "Рюкзак с USB-портом",
-    description: "Рюкзак с разъемом для зарядки гаджетов",
-    price: "220 000 so'm",
-    image: "https://picsum.photos/seed/backpack4/200/200",
-    category: "Школьные ранцы",
-    rating: 4.9,
-    reviews: 69,
-    seller: "Канцелярский мир",
-    trending: true
-  },
-
-  // Штемпельная продукция - Штемпельные подушки
-  {
-    id: 4467,
-    name: "Штемпельная подушка синяя",
-    description: "Подушка с синей краской для печатей",
-    price: "10 000 so'm",
-    image: "https://picsum.photos/seed/stamp1/200/200",
-    category: "Штемпельные подушки",
-    rating: 4.4,
-    reviews: 43,
-    seller: "ОфисМаркет",
-    trending: true
-  },
-  {
-    id: 4468,
-    name: "Штемпельная подушка черная",
-    description: "Подушка с черной краской для штампов",
-    price: "10 000 so'm",
-    image: "https://picsum.photos/seed/stamp2/200/200",
-    category: "Штемпельные подушки",
-    rating: 4.3,
-    reviews: 39,
-    seller: "ОфисМаркет",
-    trending: false
-  },
-  {
-    id: 4469,
-    name: "Штемпельная подушка цветная",
-    description: "Набор подушек с разноцветной краской",
-    price: "15 000 so'm",
-    image: "https://picsum.photos/seed/stamp3/200/200",
-    category: "Штемпельные подушки",
-    rating: 4.5,
-    reviews: 47,
-    seller: "ОфисМаркет",
-    trending: true
-  },
-  {
-    id: 4470,
-    name: "Штемпельная подушка большая",
-    description: "Большая подушка для интенсивного использования",
-    price: "20 000 so'm",
-    image: "https://picsum.photos/seed/stamp4/200/200",
-    category: "Штемпельные подушки",
-    rating: 4.6,
-    reviews: 41,
-    seller: "ОфисМаркет",
-    trending: false
-  },
-
-  // Штемпельная продукция - Датеры
-  {
-    id: 4471,
-    name: "Датер автоматический",
-    description: "Автоматический штамп с регулируемой датой",
-    price: "45 000 so'm",
-    image: "https://picsum.photos/seed/dater1/200/200",
-    category: "Датеры",
-    rating: 4.5,
-    reviews: 52,
-    seller: "ОфисМаркет",
-    trending: true
-  },
-  {
-    id: 4472,
-    name: "Датер ручной",
-    description: "Ручной датер для документов",
-    price: "30 000 so'm",
-    image: "https://picsum.photos/seed/dater2/200/200",
-    category: "Датеры",
-    rating: 4.4,
-    reviews: 46,
-    seller: "ОфисМаркет",
-    trending: false
-  },
-  {
-    id: 4473,
-    name: "Датер с текстом",
-    description: "Датер с возможностью добавления текста",
-    price: "55 000 so'm",
-    image: "https://picsum.photos/seed/dater3/200/200",
-    category: "Датеры",
-    rating: 4.6,
-    reviews: 49,
-    seller: "ОфисМаркет",
-    trending: true
-  },
-  {
-    id: 4474,
-    name: "Мини-датер",
-    description: "Компактный датер для небольших документов",
-    price: "25 000 so'm",
-    image: "https://picsum.photos/seed/dater4/200/200",
-    category: "Датеры",
-    rating: 4.3,
-    reviews: 38,
-    seller: "ОфисМаркет",
-    trending: false
-  },
-
-  // Штемпельная продукция - Нумераторы
-  {
-    id: 4475,
-    name: "Нумератор автоматический",
-    description: "Автоматический штамп для нумерации документов",
-    price: "50 000 so'm",
-    image: "https://picsum.photos/seed/numerator1/200/200",
-    category: "Нумераторы",
-    rating: 4.5,
-    reviews: 47,
-    seller: "ОфисМаркет",
-    trending: true
-  },
-  {
-    id: 4476,
-    name: "Нумератор ручной",
-    description: "Ручной нумератор для маркировки",
-    price: "35 000 so'm",
-    image: "https://picsum.photos/seed/numerator2/200/200",
-    category: "Нумераторы",
-    rating: 4.4,
-    reviews: 41,
-    seller: "ОфисМаркет",
-    trending: false
-  },
-  {
-    id: 4477,
-    name: "Нумератор с регулировкой",
-    description: "Нумератор с возможностью настройки формата",
-    price: "60 000 so'm",
-    image: "https://picsum.photos/seed/numerator3/200/200",
-    category: "Нумераторы",
-    rating: 4.6,
-    reviews: 53,
-    seller: "ОфисМаркет",
-    trending: true
-  },
-  {
-    id: 4478,
-    name: "Мини-нумератор",
-    description: "Компактный нумератор для малых объемов",
-    price: "30 000 so'm",
-    image: "https://picsum.photos/seed/numerator4/200/200",
-    category: "Нумераторы",
-    rating: 4.3,
-    reviews: 39,
-    seller: "ОфисМаркет",
-    trending: false
-  },
-
-  // Штемпельная продукция - Оснастки для печатей
-  {
-    id: 4479,
-    name: "Оснастка для печати автоматическая",
-    description: "Автоматическая оснастка для круглых печатей",
-    price: "40 000 so'm",
-    image: "https://picsum.photos/seed/stampholder1/200/200",
-    category: "Оснастки для печатей",
-    rating: 4.5,
-    reviews: 48,
-    seller: "ОфисМаркет",
-    trending: true
-  },
-  {
-    id: 4480,
-    name: "Оснастка для печати ручная",
-    description: "Ручная оснастка для печатей",
-    price: "25 000 so'm",
-    image: "https://picsum.photos/seed/stampholder2/200/200",
-    category: "Оснастки для печатей",
-    rating: 4.4,
-    reviews: 42,
-    seller: "ОфисМаркет",
-    trending: false
-  },
-  {
-    id: 4481,
-    name: "Оснастка для печати карманная",
-    description: "Компактная оснастка для переноски",
-    price: "30 000 so'm",
-    image: "https://picsum.photos/seed/stampholder3/200/200",
-    category: "Оснастки для печатей",
-    rating: 4.6,
-    reviews: 46,
-    seller: "ОфисМаркет",
-    trending: true
-  },
-  {
-    id: 4482,
-    name: "Оснастка для печати металлическая",
-    description: "Прочная металлическая оснастка для печатей",
-    price: "50 000 so'm",
-    image: "https://picsum.photos/seed/stampholder4/200/200",
-    category: "Оснастки для печатей",
-    rating: 4.7,
-    reviews: 51,
-    seller: "ОфисМаркет",
-    trending: false
+    trending: true,
+    inStock: true 
   }
 
 ]

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
-import { FaSearch, FaUserCircle, FaEyeSlash, FaBars, FaHeart, FaShoppingCart } from 'react-icons/fa';
+import { FaSearch, FaUserCircle, FaHeart, FaShoppingCart } from 'react-icons/fa';
 import { useCart } from '../contexts/CartContext';
 import './Header.css';
 
@@ -27,11 +27,11 @@ const Header = ({ setSelectedCategory, searchTerm, setSearchTerm }) => {
 
   return (
     <header className="header">
-      <Link to="/" className="logo">Do‘kon</Link>
+      <Link to="/" className="logo">LOGO</Link>
       <form className="search-bar" onSubmit={handleSearch}>
         <input
           type="text"
-          placeholder="Do‘konda qidirish"
+          placeholder="What are you shopping for?"
           value={searchTerm}
           onChange={(e) => setSearchTerm(e.target.value)}
           aria-label="Search products"
@@ -42,30 +42,24 @@ const Header = ({ setSelectedCategory, searchTerm, setSearchTerm }) => {
       </form>
       <nav className="nav-links">
         <Link to="/favorites" className="nav-link" aria-label="Favorites">
-          <FaHeart /> Sevimlilar
+          <FaHeart />
         </Link>
         <Link to="/cart" className="nav-link cart-link" aria-label="Cart">
-          <FaShoppingCart /> Savat {totalItems > 0 && <span className="cart-count">{totalItems}</span>}
+          <FaShoppingCart /> {totalItems > 0 && <span className="cart-count">{totalItems}</span>}
         </Link>
-        <div className="user-section">
-          <span className="online-status">Online</span>
-          <div className="user-avatar">
-            <FaUserCircle /> Pikachu
-          </div>
-          <button className="hide-btn" aria-label="Hide profile">
-            <FaEyeSlash /> Yashirish
-          </button>
-        </div>
+        <Link to="/sign-in" className="nav-link" aria-label="Sign in">
+          <FaUserCircle />
+        </Link>
       </nav>
       <button className="mobile-menu-toggle" onClick={toggleMobileMenu} aria-label="Toggle menu">
-        <FaBars />
+        {/* Mobile menu toggle icon can be added here if needed */}
       </button>
       {isMobileMenuOpen && (
         <div className="mobile-menu">
           <form className="mobile-search-bar" onSubmit={handleSearch}>
             <input
               type="text"
-              placeholder="Do‘konda qidirish"
+              placeholder="What are you shopping for?"
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
               aria-label="Search products"
@@ -76,20 +70,14 @@ const Header = ({ setSelectedCategory, searchTerm, setSearchTerm }) => {
           </form>
           <nav className="mobile-nav-links">
             <Link to="/favorites" className="mobile-nav-link" aria-label="Favorites">
-              <FaHeart /> Sevimlilar
+              <FaHeart />
             </Link>
             <Link to="/cart" className="mobile-nav-link cart-link" aria-label="Cart">
-              <FaShoppingCart /> Savat {totalItems > 0 && <span className="cart-count">{totalItems}</span>}
+              <FaShoppingCart /> {totalItems > 0 && <span className="cart-count">{totalItems}</span>}
             </Link>
-            <div className="mobile-user-section">
-              <span className="online-status">Online</span>
-              <div className="user-avatar">
-                <FaUserCircle /> Pikachu
-              </div>
-              <button className="hide-btn" aria-label="Hide profile">
-                <FaEyeSlash /> Yashirish
-              </button>
-            </div>
+            <Link to="/sign-in" className="mobile-nav-link" aria-label="Sign in">
+              <FaUserCircle />
+            </Link>
           </nav>
         </div>
       )}

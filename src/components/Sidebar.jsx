@@ -31,13 +31,12 @@ const Sidebar = ({ selectedCategory, setSelectedCategory }) => {
 
   const handleCategoryClick = (categoryName) => {
     setSelectedCategory(categoryName);
-    // Kategoriya sahifasiga yo'naltirish
     navigate(`/category/${encodeURIComponent(categoryName)}`);
   };
 
   return (
     <aside className="sidebar">
-      <h3>Категории</h3>
+      <h3 className="sidebar-title">Категории</h3>
       {categories.map((cat, index) => (
         <div key={index} className="accordion-item">
           <div
@@ -54,7 +53,7 @@ const Sidebar = ({ selectedCategory, setSelectedCategory }) => {
               {cat.sub.map((subItem, subIndex) => (
                 <li
                   key={subIndex}
-                  className={selectedCategory === subItem ? 'active' : ''}
+                  className={`subcategory-item ${selectedCategory === subItem ? 'active' : ''}`}
                   onClick={() => handleCategoryClick(subItem)}
                 >
                   {subItem}

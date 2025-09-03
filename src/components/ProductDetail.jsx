@@ -3,7 +3,7 @@ import { useParams, Link } from 'react-router-dom';
 import { products } from '../data/products';
 import { useCart } from '../contexts/CartContext';
 import ProductCard from './ProductCard';
-import { FaStar, FaShoppingCart, FaHeart, FaCheck, FaTimes, FaStore } from 'react-icons/fa';
+import { FaStar, FaShoppingCart, FaHeart, FaCheck, FaTimes, FaStore, FaChevronUp, FaChevronDown } from 'react-icons/fa';
 import './ProductDetail.css';
 
 const ProductDetail = () => {
@@ -31,6 +31,11 @@ const ProductDetail = () => {
       </div>
     );
   }
+
+  // Faqat 3 ta thumbnail ko'rsatish
+  const displayedThumbnails = product.images && product.images.length > 0 
+    ? product.images.slice(0, 3) 
+    : [product.image];
 
   const parsePrice = (priceString) => {
     const numericString = priceString.replace(/[^0-9]/g, '');
@@ -63,26 +68,29 @@ const ProductDetail = () => {
 
       <div className="product-detail">
         <div className="product-gallery">
-          <div className="main-image">
-            <img 
-              src={product.images ? product.images[selectedImage] : product.image} 
-              alt={product.name} 
-              loading="lazy"
-            />
+          {/* Chap tomondagi 3 ta thumbnail */}
+          <div className="thumbnails-column">
+            {displayedThumbnails.map((img, index) => (
+              <div 
+                key={index} 
+                className={`thumbnail ${selectedImage === index ? 'active' : ''}`}
+                onClick={() => setSelectedImage(index)}
+              >
+                <img src={img} alt={`${product.name} ${index + 1}`} loading="lazy" />
+              </div>
+            ))}
           </div>
-          {product.images && product.images.length > 1 && (
-            <div className="thumbnail-container">
-              {product.images.map((img, index) => (
-                <div 
-                  key={index} 
-                  className={`thumbnail ${selectedImage === index ? 'active' : ''}`}
-                  onClick={() => setSelectedImage(index)}
-                >
-                  <img src={img} alt={`${product.name} ${index + 1}`} loading="lazy" />
-                </div>
-              ))}
+
+          {/* O'ng tomondagi asosiy rasm */}
+          <div className="main-image-container">
+            <div className="main-image">
+              <img 
+                src={product.images ? product.images[selectedImage] : product.image} 
+                alt={product.name} 
+                loading="lazy"
+              />
             </div>
-          )}
+          </div>
         </div>
 
         <div className="product-info">

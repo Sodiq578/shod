@@ -1,0 +1,179 @@
+/* General navbar styles */
+.navbar {
+  width: 100%;
+  background-color: #ffffff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+/* Container for navbar items */
+.nav-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+/* Mobile menu toggle button */
+.mobile-menu-toggle {
+  display: none; /* Hidden by default, shown on mobile */
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  padding: 10px;
+  color: #333;
+}
+
+/* Nav items container */
+.nav-items {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  align-items: center;
+  overflow-x: auto;   /* gorizontal scroll */
+  white-space: nowrap; /* matnni keyingi qatorga tushirmaydi */
+
+  /* scrollbarni yashirish */
+  scrollbar-width: none; /* Firefox uchun */
+}
+
+.nav-items::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Edge uchun */
+}
+
+/* Individual nav item */
+.nav-item {
+  position: relative;
+  margin: 0 10px;
+}
+
+/* Main nav item (category) */
+.nav-main-item {
+  display: flex;
+  align-items: center;
+  padding: 15px 10px;
+  font-size: 16px;
+  font-weight: 500;
+  color: #333;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.nav-main-item:hover {
+  color: #007bff;
+}
+
+/* Dropdown icon */
+.dropdown-icon {
+  margin-left: 5px;
+  font-size: 14px;
+}
+
+/* Dropdown menu */
+.dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #ffffff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 4px;
+  min-width: 200px;
+  z-index: 1000;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-10px);
+  transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s ease;
+}
+
+.nav-item:hover .dropdown-menu {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+/* Dropdown item */
+.dropdown-item {
+  padding: 10px 15px;
+  font-size: 14px;
+  color: #333;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.dropdown-item:hover {
+  background-color: #f8f9fa;
+  color: #007bff;
+}
+
+.dropdown-item.active {
+  background-color: #007bff;
+  color: #ffffff;
+  font-weight: 500;
+}
+
+/* Mobile-specific styles */
+@media (max-width: 768px) {
+  .mobile-menu-toggle {
+    display: block;
+  }
+
+  .nav-items {
+    display: none; /* Hidden by default on mobile */
+    flex-direction: column;
+    width: 100%;
+    background-color: #ffffff;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+
+  .nav-items.mobile-open {
+    display: flex;
+  }
+
+  .nav-item {
+    width: 100%;
+    margin: 0;
+  }
+
+  .nav-main-item {
+    justify-content: space-between;
+    padding: 15px 20px;
+    border-bottom: 1px solid #eee;
+  }
+
+  .dropdown-menu {
+    position: static;
+    width: 100%;
+    box-shadow: none;
+    border-radius: 0;
+    background-color: #f8f9fa;
+    opacity: 1;
+    visibility: visible;
+    transform: none;
+    transition: none;
+  }
+
+  .dropdown-menu.mobile-dropdown {
+    display: none;
+  }
+
+  .nav-item:hover .dropdown-menu.mobile-dropdown {
+    display: block;
+  }
+
+  .dropdown-item {
+    padding: 12px 30px;
+    border-bottom: 1px solid #eee;
+  }
+}
+
+/* Ensure smooth transitions for all elements */
+.nav-main-item,
+.dropdown-item,
+.mobile-menu-toggle {
+  transition: all 0.3s ease;
+}

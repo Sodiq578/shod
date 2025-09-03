@@ -2,13 +2,13 @@
 import React, { useState } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Header from './components/Header';
-import Sidebar from './components/Sidebar';
+import Navbar from './components/Navbar'; // Sidebar yerine Navbar import ediyoruz
 import Footer from './components/Footer';
 import Home from './pages/Home';
 import Category from './pages/Category';
 import ProductDetail from './components/ProductDetail';
 import Cart from './components/Cart';
-import Favorites from './components/Favorites';  // <-- endi pages ichidan to‘g‘ri import
+import Favorites from './components/Favorites';
 import { CartProvider } from './contexts/CartContext';
 import { UserProvider } from './contexts/UserContext';
 import './App.css';
@@ -22,21 +22,20 @@ function App() {
       <CartProvider>
         <Router>
           <div className="app">
-            {/* Header */}
             <Header 
               setSelectedCategory={setSelectedCategory} 
               searchTerm={searchTerm} 
               setSearchTerm={setSearchTerm} 
             />
+            
+            {/* Sidebar yerine Navbar ekliyoruz */}
+            <Navbar 
+              selectedCategory={selectedCategory} 
+              setSelectedCategory={setSelectedCategory} 
+            />
 
             <div className="main-content">
-              {/* Sidebar */}
-              <Sidebar 
-                selectedCategory={selectedCategory} 
-                setSelectedCategory={setSelectedCategory} 
-              />
-
-              {/* Asosiy kontent */}
+              {/* Sidebar'ı kaldırıyoruz */}
               <main>
                 <Routes>
                   <Route 
@@ -56,7 +55,6 @@ function App() {
               </main>
             </div>
 
-            {/* Footer */}
             <Footer />
           </div>
         </Router>
