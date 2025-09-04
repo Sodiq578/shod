@@ -1,8 +1,8 @@
-// src/App.js
 import React, { useState } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 import Header from './components/Header';
-import Navbar from './components/Navbar'; // Sidebar yerine Navbar import ediyoruz
+import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import Home from './pages/Home';
 import Category from './pages/Category';
@@ -14,38 +14,40 @@ import { UserProvider } from './contexts/UserContext';
 import './App.css';
 
 function App() {
+  const { i18n } = useTranslation();
   const [selectedCategory, setSelectedCategory] = useState('All');
   const [searchTerm, setSearchTerm] = useState('');
+
+  const changeLanguage = (lng) => {
+    i18n.changeLanguage(lng);
+  };
 
   return (
     <UserProvider>
       <CartProvider>
         <Router>
           <div className="app">
-            <Header 
-              setSelectedCategory={setSelectedCategory} 
-              searchTerm={searchTerm} 
-              setSearchTerm={setSearchTerm} 
+            <Header
+              setSelectedCategory={setSelectedCategory}
+              searchTerm={searchTerm}
+              setSearchTerm={setSearchTerm}
             />
-            
-            {/* Sidebar yerine Navbar ekliyoruz */}
-            <Navbar 
-              selectedCategory={selectedCategory} 
-              setSelectedCategory={setSelectedCategory} 
+           
+            <Navbar
+              selectedCategory={selectedCategory}
+              setSelectedCategory={setSelectedCategory}
             />
-
             <div className="main-content">
-              {/* Sidebar'ı kaldırıyoruz */}
               <main>
                 <Routes>
-                  <Route 
-                    path="/" 
+                  <Route
+                    path="/"
                     element={
-                      <Home 
-                        selectedCategory={selectedCategory} 
-                        searchTerm={searchTerm} 
+                      <Home
+                        selectedCategory={selectedCategory}
+                        searchTerm={searchTerm}
                       />
-                    } 
+                    }
                   />
                   <Route path="/category/:cat" element={<Category />} />
                   <Route path="/product/:id" element={<ProductDetail />} />
@@ -54,7 +56,6 @@ function App() {
                 </Routes>
               </main>
             </div>
-
             <Footer />
           </div>
         </Router>

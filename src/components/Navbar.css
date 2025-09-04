@@ -1,179 +1,244 @@
-/* General navbar styles */
+
+ 
 .navbar {
-  width: 100%;
-  background-color: #ffffff;
+  background-color: #fff;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  position: sticky;
-  top: 0;
-  z-index: 1000;
+  padding: 0.5rem 0;
 }
 
-/* Container for navbar items */
 .nav-container {
-  max-width: 1200px;
+  max-width: 1400px;
   margin: 0 auto;
-  padding: 0 15px;
+  padding: 0 1rem;
 }
 
-/* Mobile menu toggle button */
-.mobile-menu-toggle {
-  display: none; /* Hidden by default, shown on mobile */
-  background: none;
-  border: none;
-  font-size: 24px;
-  cursor: pointer;
-  padding: 10px;
-  color: #333;
-}
-
-/* Nav items container */
 .nav-items {
   display: flex;
-  flex-wrap: nowrap;
-  justify-content: flex-start;
+  justify-content: space-between;
   align-items: center;
-  overflow-x: auto;   /* gorizontal scroll */
-  white-space: nowrap; /* matnni keyingi qatorga tushirmaydi */
-
-  /* scrollbarni yashirish */
-  scrollbar-width: none; /* Firefox uchun */
 }
 
-.nav-items::-webkit-scrollbar {
-  display: none; /* Chrome, Safari, Edge uchun */
-}
-
-/* Individual nav item */
 .nav-item {
   position: relative;
-  margin: 0 10px;
+  flex: 1;
+  text-align: center;
 }
 
-/* Main nav item (category) */
 .nav-main-item {
   display: flex;
+  flex-direction: column;
   align-items: center;
-  padding: 15px 10px;
-  font-size: 16px;
-  font-weight: 500;
-  color: #333;
+  padding: 0.5rem;
   cursor: pointer;
-  transition: color 0.3s ease;
+  transition: background-color 0.3s;
 }
 
 .nav-main-item:hover {
-  color: #007bff;
+  background-color: #f5f5f5;
 }
 
-/* Dropdown icon */
-.dropdown-icon {
-  margin-left: 5px;
+.nav-icon {
+  font-size: 1.5rem;
+  margin-bottom: 0.25rem;
+}
+
+.nav-text {
   font-size: 14px;
+  color: #2c3e50;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 100px;
 }
 
-/* Dropdown menu */
+.catalog-icon {
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
+}
+
+.dropdown-icon {
+  font-size: 0.875rem;
+  color: #2c3e50;
+}
+
 .dropdown-menu {
   position: absolute;
   top: 100%;
   left: 0;
-  background-color: #ffffff;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  border-radius: 4px;
-  min-width: 200px;
+  width: 250px;
+  background: white;
+  border-radius: 0 0 8px 8px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
   z-index: 1000;
-  opacity: 0;
-  visibility: hidden;
-  transform: translateY(-10px);
-  transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s ease;
+  padding: 10px 0;
+  max-height: 400px;
+  overflow-y: auto;
+  animation: fadeIn 0.3s ease;
 }
 
-.nav-item:hover .dropdown-menu {
-  opacity: 1;
-  visibility: visible;
-  transform: translateY(0);
-}
-
-/* Dropdown item */
 .dropdown-item {
-  padding: 10px 15px;
-  font-size: 14px;
-  color: #333;
+  padding: 12px 20px;
   cursor: pointer;
-  transition: background-color 0.3s ease, color 0.3s ease;
+  transition: all 0.2s ease;
+  color: #2c3e50;
+  font-size: 14px;
+  border-left: 3px solid transparent;
+  font-family: 'Galada', cursive;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .dropdown-item:hover {
-  background-color: #f8f9fa;
-  color: #007bff;
+  background: #f8f9fa;
+  border-left: 3px solid #3498db;
+  color: #3498db;
 }
 
 .dropdown-item.active {
-  background-color: #007bff;
-  color: #ffffff;
+  background: #e3f2fd;
+  border-left: 3px solid #3498db;
+  color: #3498db;
   font-weight: 500;
 }
 
-/* Mobile-specific styles */
+.mobile-menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  color: #2c3e50;
+  font-size: 24px;
+  cursor: pointer;
+  padding: 15px;
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 1001;
+}
+
+.dropdown-menu::-webkit-scrollbar {
+  width: 6px;
+}
+
+.dropdown-menu::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 3px;
+}
+
+.dropdown-menu::-webkit-scrollbar-thumb {
+  background: #c4c4c4;
+  border-radius: 3px;
+}
+
+.dropdown-menu::-webkit-scrollbar-thumb:hover {
+  background: #a0a0a0;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 1024px) {
+  .nav-text {
+    max-width: 80px;
+    font-size: 13px;
+  }
+  
+  .nav-main-item {
+    padding: 10px 8px;
+  }
+}
+
 @media (max-width: 768px) {
   .mobile-menu-toggle {
     display: block;
   }
-
+  
   .nav-items {
-    display: none; /* Hidden by default on mobile */
     flex-direction: column;
-    width: 100%;
-    background-color: #ffffff;
-    position: absolute;
-    top: 60px;
-    left: 0;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 280px;
+    height: 100vh;
+    background: white;
+    box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
+    transition: right 0.3s ease;
+    padding-top: 50px;
+    overflow-y: auto;
+    z-index: 1000;
   }
-
+  
   .nav-items.mobile-open {
-    display: flex;
+    right: 0;
   }
-
+  
   .nav-item {
-    width: 100%;
-    margin: 0;
-  }
-
-  .nav-main-item {
-    justify-content: space-between;
-    padding: 15px 20px;
+    flex: none;
+    justify-content: flex-start;
     border-bottom: 1px solid #eee;
   }
-
+  
+  .nav-main-item {
+    padding: 15px 20px;
+    color: #2c3e50;
+    justify-content: space-between;
+    flex-direction: row;
+  }
+  
+  .nav-icon {
+    color: #3498db;
+    margin-bottom: 0;
+    margin-right: 0.5rem;
+  }
+  
+  .catalog-icon {
+    filter: invert(0);
+  }
+  
   .dropdown-menu {
     position: static;
     width: 100%;
     box-shadow: none;
     border-radius: 0;
-    background-color: #f8f9fa;
-    opacity: 1;
-    visibility: visible;
-    transform: none;
-    transition: none;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+    padding: 0;
   }
-
+  
   .dropdown-menu.mobile-dropdown {
-    display: none;
+    max-height: 500px;
   }
-
-  .nav-item:hover .dropdown-menu.mobile-dropdown {
-    display: block;
-  }
-
+  
   .dropdown-item {
-    padding: 12px 30px;
-    border-bottom: 1px solid #eee;
+    padding-left: 40px;
+    font-size: 14px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  
+  .nav-text {
+    max-width: none;
+    color: #2c3e50;
+    font-size: 14px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  
+  .dropdown-icon {
+    color: #2c3e50;
   }
 }
-
-/* Ensure smooth transitions for all elements */
-.nav-main-item,
-.dropdown-item,
-.mobile-menu-toggle {
-  transition: all 0.3s ease;
-}
+ 
