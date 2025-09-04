@@ -1061,11 +1061,7 @@
   transition: all 0.2s;
 }
 
-.variant-option.selected {
-  border-color: #007bff;
-  background: #007bff;
-  color: white;
-}
+ 
 
 .variant-option:hover {
   border-color: #007bff;
@@ -1092,10 +1088,7 @@
   transition: all 0.2s;
 }
 
-.add-to-cart-btn {
-  background: #007bff;
-  color: white;
-}
+ 
 
 .add-to-cart-btn:hover:not(:disabled) {
   background: #0056b3;

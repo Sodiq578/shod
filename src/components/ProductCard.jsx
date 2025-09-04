@@ -1,10 +1,11 @@
 // src/components/ProductCard.js
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { FaHeart, FaShoppingCart } from 'react-icons/fa';
 import { useUser } from '../contexts/UserContext';
 import { useCart } from '../contexts/CartContext';
 import './ProductCard.css';
+import bag from '../images/bag.svg';
 
 const ProductCard = ({ product }) => {
   const [isFavorite, setIsFavorite] = useState(false);
@@ -12,7 +13,7 @@ const ProductCard = ({ product }) => {
   const { addToCart } = useCart();
 
   // Check if product is in favorites
-  React.useEffect(() => {
+  useEffect(() => {
     const found = favorites.find(fav => fav.id === product.id);
     setIsFavorite(!!found);
   }, [favorites, product.id]);
@@ -26,7 +27,7 @@ const ProductCard = ({ product }) => {
     } else {
       addToFavorites(product);
     }
-    setIsFavorite(!isFavorite);
+    // setIsFavorite(!isFavorite); // Bu qatorni olib tashladim, chunki useEffect yangilaydi
   };
 
   const handleAddToCart = (e) => {
@@ -50,10 +51,16 @@ const ProductCard = ({ product }) => {
         </div>
         <div className="product-info">
           <h3 className="product-name">{product.name}</h3>
-          <p className="product-price">{product.price}</p>
-          <button className="add-to-cart-btn" onClick={handleAddToCart}>
-            <FaShoppingCart /> Savatga
-          </button>
+          <div className="product-box">
+            <p className="product-price">{product.price}</p>
+            <button 
+              className="add-to-cart-btn"
+              onClick={handleAddToCart}
+              aria-label="Add to cart"
+            >
+              <img src={bag} alt="Shopping bag" />
+            </button>
+          </div>
         </div>
       </Link>
     </div>

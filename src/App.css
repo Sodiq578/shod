@@ -1,43 +1,5 @@
-.app {
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-}
-
-.main-content {
-  display: flex;
-  flex: 1;
-}
-
-.sidebar {
-  width: 250px;
-  background: #f8f9fa;
-  padding: 20px;
-  border-right: 1px solid #e0e0e0;
-  height: auto;
-}
-
-main {
-  flex: 1;
-  padding: 20px;
-}
-
-.product-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-  gap: 20px;
-}
-
-@media (max-width: 768px) {
-  .main-content {
-    flex-direction: column;
-  }
-  .sidebar {
-    width: 100%;
-    border-right: none;
-    border-bottom: 1px solid #e0e0e0;
-  }
-  .product-grid {
-    grid-template-columns: 1fr;
-  }
+*{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
