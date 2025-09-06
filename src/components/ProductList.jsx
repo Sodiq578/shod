@@ -1,29 +1,33 @@
 import React from 'react';
-import { products } from '../data/products';
+import { products } from './products'; // Import the products array
+import './ProductList.css';
 
 const ProductList = ({ selectedCategory }) => {
-  // Filter products based on selectedCategory (array)
-  const filteredProducts = products.filter((product) =>
-    selectedCategory.includes(product.category)
-  );
+  // Filter products based on the selected category
+  const filteredProducts = selectedCategory
+    ? products.filter((product) => product.category.toLowerCase() === selectedCategory.toLowerCase())
+    : products;
 
   return (
     <div className="product-list">
-      {filteredProducts.length > 0 ? (
-        filteredProducts.map((product) => (
-          <div key={product.id} className="product-item">
-            <img src={product.image} alt={product.name} />
-            <h4>{product.name}</h4>
-            <p>{product.description}</p>
-            <p>{product.price}</p>
-            <p>Рейтинг: {product.rating} ({product.reviews} отзывов)</p>
-            <p>Продавец: {product.seller}</p>
-            {product.trending && <span>Тренд</span>}
-            {product.inStock && <span>В наличии</span>}
-          </div>
-        ))
+      <h2>{selectedCategory ? `Products in ${selectedCategory}` : 'All Products'}</h2>
+      {filteredProducts.length === 0 ? (
+        <p>No products found for this category.</p>
       ) : (
-        <p>Товары не найдены</p>
+        <div className="product-grid">
+          {filteredProducts.map((product) => (
+            <div key={product.id} className="product-card">
+              <img src={product.image} alt={product.name} className="product-image" />
+              <h3>{product.name}</h3>
+              <p>{product.description}</p>
+              <p>Price: {product.price}</p>
+              <p>Rating: {product.rating} ({product.reviews} reviews)</p>
+              <p>Seller: {product.seller}</p>
+              <p>{product.inStock ? 'In Stock' : 'Out of Stock'}</p>
+              {product.trending && <span className="trending">Trending</span>}
+            </div>
+          ))}
+        </div>
       )}
     </div>
   );

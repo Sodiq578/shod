@@ -1,29 +1,62 @@
-
- 
+/* Navigatsiya paneli uchun umumiy stillar */
 .navbar {
   background-color: #fff;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   padding: 0.5rem 0;
+  position: relative;
+  z-index: 999;
 }
 
+/* Navigatsiya elementlarini joylashtirish uchun konteyner */
 .nav-container {
-  max-width: 1400px;
+  max-width: 1200px;
   margin: 0 auto;
   padding: 0 1rem;
 }
 
+/* Navigatsiya elementlari ro‘yxati */
 .nav-items {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  overflow-x: scroll; /* Doimiy gorizontal scroll */
+  white-space: nowrap;
+  -webkit-overflow-scrolling: touch; /* iOS uchun silliq scroll */
+  scrollbar-width: auto; /* Firefox uchun scrollbar ko‘rinishi */
+  -ms-overflow-style: auto; /* IE/Edge uchun scrollbar ko‘rinishi */
+  margin-bottom: 10px; /* Dropdown menyular scrollbar bilan to‘qnashmasligi uchun */
 }
 
+/* WebKit brauzerlari uchun scrollbar stillari (Chrome, Safari) */
+.nav-items::-webkit-scrollbar {
+  height: 8px; /* Scrollbar balandligi */
+  display: none; /* Scrollbar doim ko‘rinsin */
+
+}
+
+.nav-items::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 4px; /* Yumaloq burchaklar */
+}
+
+.nav-items::-webkit-scrollbar-thumb {
+  background: #3498db; /* Mavzu rangiga mos keladigan ko‘k rang */
+  border-radius: 4px;
+  display: none;
+}
+
+.nav-items::-webkit-scrollbar-thumb:hover {
+  background: #2980b9; /* Hoverda quyuqroq rang */
+}
+
+/* Har bir navigatsiya elementi */
 .nav-item {
   position: relative;
   flex: 1;
   text-align: center;
+  min-width: 100px; /* Minimal kenglik */
 }
 
+/* Asosiy navigatsiya elementi */
 .nav-main-item {
   display: flex;
   flex-direction: column;
@@ -34,14 +67,35 @@
 }
 
 .nav-main-item:hover {
-  background-color: #f5f5f5;
+  background-color: #f5f5f5; /* Hoverda och fon */
 }
 
-.nav-icon {
-  font-size: 1.5rem;
+/* Ikonka konteyneri */
+.nav-icon-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  background-color: #e3f2fd;
+  border-radius: 50%;
   margin-bottom: 0.25rem;
 }
 
+/* Ikonka o‘lchami */
+.nav-icon {
+  font-size: 1.5rem;
+}
+
+/* Katalog ikonka stillari */
+.catalog-icon {
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
+}
+
+/* Matn stillari */
 .nav-text {
   font-size: 14px;
   color: #2c3e50;
@@ -51,17 +105,7 @@
   max-width: 100px;
 }
 
-.catalog-icon {
-  width: 24px;
-  height: 24px;
-  object-fit: contain;
-}
-
-.dropdown-icon {
-  font-size: 0.875rem;
-  color: #2c3e50;
-}
-
+/* Dropdown menyusi */
 .dropdown-menu {
   position: absolute;
   top: 100%;
@@ -69,7 +113,6 @@
   width: 250px;
   background: white;
   border-radius: 0 0 8px 8px;
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
   z-index: 1000;
   padding: 10px 0;
   max-height: 400px;
@@ -77,6 +120,7 @@
   animation: fadeIn 0.3s ease;
 }
 
+/* Dropdown elementlari */
 .dropdown-item {
   padding: 12px 20px;
   cursor: pointer;
@@ -84,7 +128,6 @@
   color: #2c3e50;
   font-size: 14px;
   border-left: 3px solid transparent;
-  font-family: 'Galada', cursive;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -92,7 +135,7 @@
 
 .dropdown-item:hover {
   background: #f8f9fa;
-  border-left: 3px solid #3498db;
+  border-left: 3px solid #3498db; /* Hoverda ko‘k chiziq */
   color: #3498db;
 }
 
@@ -103,21 +146,7 @@
   font-weight: 500;
 }
 
-.mobile-menu-toggle {
-  display: none;
-  background: none;
-  border: none;
-  color: #2c3e50;
-  font-size: 24px;
-  cursor: pointer;
-  padding: 15px;
-  position: absolute;
-  right: 10px;
-  top: 50%;
-  transform: translateY(-50%);
-  z-index: 1001;
-}
-
+/* Dropdown menyusi uchun scrollbar stillari */
 .dropdown-menu::-webkit-scrollbar {
   width: 6px;
 }
@@ -136,6 +165,7 @@
   background: #a0a0a0;
 }
 
+/* Animatsiya effektlari */
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -147,6 +177,7 @@
   }
 }
 
+/* Planshetlar uchun media so‘rov */
 @media (max-width: 1024px) {
   .nav-text {
     max-width: 80px;
@@ -158,87 +189,63 @@
   }
 }
 
+/* Mobil qurilmalar uchun media so‘rov */
 @media (max-width: 768px) {
-  .mobile-menu-toggle {
-    display: block;
+  .navbar {
+    padding: 0.5rem 0;
   }
   
   .nav-items {
-    flex-direction: column;
-    position: fixed;
-    top: 0;
-    right: -100%;
-    width: 280px;
-    height: 100vh;
-    background: white;
-    box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
-    transition: right 0.3s ease;
-    padding-top: 50px;
-    overflow-y: auto;
-    z-index: 1000;
-  }
-  
-  .nav-items.mobile-open {
-    right: 0;
+    display: flex;
+    justify-content: flex-start; /* Elementlar chapdan boshlanadi */
+    align-items: center;
+    overflow-x: scroll; /* Gorizontal scroll */
+    white-space: nowrap;
+    -webkit-overflow-scrolling: touch;
   }
   
   .nav-item {
-    flex: none;
-    justify-content: flex-start;
-    border-bottom: 1px solid #eee;
+    flex: none; /* Flex o‘sishini to‘xtatish */
+    min-width: 80px; /* Kichikroq minimal kenglik */
+    text-align: center;
   }
   
   .nav-main-item {
-    padding: 15px 20px;
-    color: #2c3e50;
-    justify-content: space-between;
-    flex-direction: row;
+    padding: 8px 6px;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .nav-icon-container {
+    width: 32px;
+    height: 32px;
+    background-color: #e3f2fd;
+    border-radius: 50%;
   }
   
   .nav-icon {
-    color: #3498db;
-    margin-bottom: 0;
-    margin-right: 0.5rem;
+    font-size: 1.2rem;
   }
   
   .catalog-icon {
-    filter: invert(0);
-  }
-  
-  .dropdown-menu {
-    position: static;
-    width: 100%;
-    box-shadow: none;
-    border-radius: 0;
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.3s ease;
-    padding: 0;
-  }
-  
-  .dropdown-menu.mobile-dropdown {
-    max-height: 500px;
-  }
-  
-  .dropdown-item {
-    padding-left: 40px;
-    font-size: 14px;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
+    width: 20px;
+    height: 20px;
   }
   
   .nav-text {
-    max-width: none;
-    color: #2c3e50;
-    font-size: 14px;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
+    max-width: 70px;
+    font-size: 12px;
   }
   
-  .dropdown-icon {
-    color: #2c3e50;
+  .dropdown-menu {
+    width: 200px;
+    max-height: 300px;
+  }
+  
+  .dropdown-item {
+    padding: 10px 15px;
+    font-size: 13px;
   }
 }
- 
+
+

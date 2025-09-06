@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import { FaSearch, FaHeart, FaShoppingCart, FaUserCircle, FaGlobe } from 'react-icons/fa';
+import { FaSearch, FaHeart, FaShoppingCart, FaUserCircle, FaGlobe, FaChevronDown } from 'react-icons/fa';
 import { useCart } from '../contexts/CartContext';
 import { useTranslation } from 'react-i18next';
 import './Header.css';
@@ -10,6 +10,7 @@ const Header = ({ setSelectedCategory, searchTerm, setSearchTerm }) => {
   const navigate = useNavigate();
   const { cart } = useCart();
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isMobileDropdownOpen, setIsMobileDropdownOpen] = useState(false);
 
   // Handle undefined cart
   const safeCart = cart || [];
@@ -25,6 +26,11 @@ const Header = ({ setSelectedCategory, searchTerm, setSearchTerm }) => {
 
   const toggleMobileMenu = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
+    setIsMobileDropdownOpen(false); // Close dropdown when toggling mobile menu
+  };
+
+  const toggleMobileDropdown = () => {
+    setIsMobileDropdownOpen(!isMobileDropdownOpen);
   };
 
   const changeLanguage = (lng) => {
@@ -35,7 +41,7 @@ const Header = ({ setSelectedCategory, searchTerm, setSearchTerm }) => {
     <div className="container">
       <header className="header">
         <Link to="/" className="logo">{t('logo')}</Link>
-        
+
         <form className="search-bar" onSubmit={handleSearch}>
           <input
             type="text"
@@ -48,7 +54,7 @@ const Header = ({ setSelectedCategory, searchTerm, setSearchTerm }) => {
             <FaSearch />
           </button>
         </form>
-        
+
         <nav className="nav-links">
           <Link to="/favorites" className="nav-link" aria-label={t('favoritesAriaLabel')}>
             <FaHeart size={20} /> <span className="nav-text">{t('favorites')}</span>
@@ -60,13 +66,14 @@ const Header = ({ setSelectedCategory, searchTerm, setSearchTerm }) => {
           <Link to="/profile" className="nav-link" aria-label={t('profileAriaLabel')}>
             <FaUserCircle size={20} /> <span className="nav-text">{t('profile')}</span>
           </Link>
+         
           <div className="language-select">
             <div className="language-toggle">
               <FaGlobe size={20} />
               <select
                 value={i18n.language}
                 onChange={(e) => changeLanguage(e.target.value)}
-                aria-label="Select language"
+                aria-label={t('selectLanguageAriaLabel')}
               >
                 <option value="en">English</option>
                 <option value="uz">O'zbekcha</option>
@@ -75,11 +82,15 @@ const Header = ({ setSelectedCategory, searchTerm, setSearchTerm }) => {
             </div>
           </div>
         </nav>
-        
-        <button className="mobile-menu-toggle" onClick={toggleMobileMenu} aria-label={t('toggleMenuAriaLabel')}>
+
+        <button
+          className="mobile-menu-toggle"
+          onClick={toggleMobileMenu}
+          aria-label={t('toggleMenuAriaLabel')}
+        >
           <span className="menu-icon">☰</span>
         </button>
-        
+
         {isMobileMenuOpen && (
           <div className="mobile-menu">
             <form className="mobile-search-bar" onSubmit={handleSearch}>
@@ -105,13 +116,24 @@ const Header = ({ setSelectedCategory, searchTerm, setSearchTerm }) => {
               <Link to="/profile" className="mobile-nav-link" aria-label={t('profileAriaLabel')}>
                 <FaUserCircle size={20} /> <span className="mobile-nav-text">{t('profile')}</span>
               </Link>
+              <div className={`mobile-dropdown ${isMobileDropdownOpen ? 'open' : ''}`}>
+                <div className="mobile-dropdown-toggle" onClick={toggleMobileDropdown}>
+                  <span className="mobile-nav-text">{t('more')}</span>
+                  <FaChevronDown size={14} style={{ marginLeft: '10px' }} />
+                </div>
+                <div className="mobile-dropdown-menu">
+                  <Link to="/settings" className="mobile-dropdown-item">{t('settings')}</Link>
+                  <Link to="/orders" className="mobile-dropdown-item">{t('orders')}</Link>
+                  <Link to="/support" className="mobile-dropdown-item">{t('support')}</Link>
+                </div>
+              </div>
               <div className="language-select">
                 <div className="language-toggle">
                   <FaGlobe size={20} />
                   <select
                     value={i18n.language}
                     onChange={(e) => changeLanguage(e.target.value)}
-                    aria-label="Select language"
+                    aria-label={t('selectLanguageAriaLabel')}
                   >
                     <option value="en">English</option>
                     <option value="uz">O'zbekcha</option>

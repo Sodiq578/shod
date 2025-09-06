@@ -1,23 +1,21 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { FiChevronDown, FiChevronUp, FiMenu, FiX } from 'react-icons/fi';
+import { FiChevronDown, FiChevronUp } from 'react-icons/fi';
 import { useNavigate } from 'react-router-dom';
-import { useTranslation } from 'react-i18next'; // Import useTranslation
+import { useTranslation } from 'react-i18next';
 import './Navbar.css';
 import catalogImg1 from '../images/catalog.svg';
+import catalogImg2 from '../images/catalog1.svg';
 
 const Navbar = ({ selectedCategory, setSelectedCategory }) => {
-  const { t } = useTranslation(); // Initialize translation hook
+  const { t } = useTranslation();
   const [openDropdown, setOpenDropdown] = useState(null);
-  const [isMobile, setIsMobile] = useState(false);
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const navigate = useNavigate();
   const navbarRef = useRef(null);
 
-  // Define categories with translated keys
+  // Kategoriyalar
   const categories = [
     {
       name: t('categories.paperProducts'),
-      icon: <img src={catalogImg1} alt="Catalog" className="catalog-icon" />,
       sub: [
         t('categories.blanks'),
         t('categories.notepads'),
@@ -31,7 +29,6 @@ const Navbar = ({ selectedCategory, setSelectedCategory }) => {
     },
     {
       name: t('categories.forCreativity'),
-      icon: <img src={catalogImg1} alt="Catalog" className="catalog-icon" />,
       sub: [
         t('categories.watercolor'),
         t('categories.acrylicPaints'),
@@ -46,12 +43,10 @@ const Navbar = ({ selectedCategory, setSelectedCategory }) => {
     },
     {
       name: t('categories.games'),
-      icon: <img src={catalogImg1} alt="Catalog" className="catalog-icon" />,
       sub: [t('categories.forComputer')],
     },
     {
       name: t('categories.officeAccessories'),
-      icon: <img src={catalogImg1} alt="Catalog" className="catalog-icon" />,
       sub: [
         t('categories.folders'),
         t('categories.files'),
@@ -63,7 +58,6 @@ const Navbar = ({ selectedCategory, setSelectedCategory }) => {
     },
     {
       name: t('categories.officeEquipment'),
-      icon: <img src={catalogImg1} alt="Catalog" className="catalog-icon" />,
       sub: [
         t('categories.phoneAccessories'),
         t('categories.batteries'),
@@ -77,7 +71,6 @@ const Navbar = ({ selectedCategory, setSelectedCategory }) => {
     },
     {
       name: t('categories.officeSupplies'),
-      icon: <img src={catalogImg1} alt="Catalog" className="catalog-icon" />,
       sub: [
         t('categories.staplers'),
         t('categories.holePunchers'),
@@ -89,7 +82,6 @@ const Navbar = ({ selectedCategory, setSelectedCategory }) => {
     },
     {
       name: t('categories.writingSupplies'),
-      icon: <img src={catalogImg1} alt="Catalog" className="catalog-icon" />,
       sub: [
         t('categories.pens'),
         t('categories.pencils'),
@@ -101,7 +93,6 @@ const Navbar = ({ selectedCategory, setSelectedCategory }) => {
     },
     {
       name: t('categories.archivingSystems'),
-      icon: <img src={catalogImg1} alt="Catalog" className="catalog-icon" />,
       sub: [
         t('categories.archiveBoxes'),
         t('categories.clipFolders'),
@@ -112,7 +103,6 @@ const Navbar = ({ selectedCategory, setSelectedCategory }) => {
     },
     {
       name: t('categories.sportingGoods'),
-      icon: <img src={catalogImg1} alt="Catalog" className="catalog-icon" />,
       sub: [
         t('categories.balls'),
         t('categories.jumpRopes'),
@@ -123,7 +113,6 @@ const Navbar = ({ selectedCategory, setSelectedCategory }) => {
     },
     {
       name: t('categories.schoolSupplies'),
-      icon: <img src={catalogImg1} alt="Catalog" className="catalog-icon" />,
       sub: [
         t('categories.pencilCases'),
         t('categories.notebooks'),
@@ -135,7 +124,6 @@ const Navbar = ({ selectedCategory, setSelectedCategory }) => {
     },
     {
       name: t('categories.stampProducts'),
-      icon: <img src={catalogImg1} alt="Catalog" className="catalog-icon" />,
       sub: [
         t('categories.stampPads'),
         t('categories.datters'),
@@ -146,25 +134,9 @@ const Navbar = ({ selectedCategory, setSelectedCategory }) => {
   ];
 
   useEffect(() => {
-    const checkIsMobile = () => {
-      setIsMobile(window.innerWidth <= 768);
-    };
-
-    checkIsMobile();
-    window.addEventListener('resize', checkIsMobile);
-
-    return () => {
-      window.removeEventListener('resize', checkIsMobile);
-    };
-  }, []);
-
-  useEffect(() => {
     const handleClickOutside = (event) => {
       if (navbarRef.current && !navbarRef.current.contains(event.target)) {
         setOpenDropdown(null);
-        if (isMobile) {
-          setMobileMenuOpen(false);
-        }
       }
     };
 
@@ -172,7 +144,7 @@ const Navbar = ({ selectedCategory, setSelectedCategory }) => {
     return () => {
       document.removeEventListener('mousedown', handleClickOutside);
     };
-  }, [isMobile]);
+  }, []);
 
   const toggleDropdown = (index) => {
     if (openDropdown === index) {
@@ -185,76 +157,63 @@ const Navbar = ({ selectedCategory, setSelectedCategory }) => {
   const handleCategoryClick = (categoryName) => {
     setSelectedCategory(categoryName);
     setOpenDropdown(null);
-    setMobileMenuOpen(false);
     navigate(`/category/${encodeURIComponent(categoryName)}`);
-  };
-
-  const toggleMobileMenu = () => {
-    setMobileMenuOpen(!mobileMenuOpen);
-    setOpenDropdown(null);
   };
 
   return (
     <nav className="navbar" ref={navbarRef}>
       <div className="nav-container">
-        {isMobile && (
-          <button
-            className="mobile-menu-toggle"
-            onClick={toggleMobileMenu}
-            aria-label={t('toggleMenuAriaLabel')}
-            aria-expanded={mobileMenuOpen}
-          >
-            {mobileMenuOpen ? <FiX /> : <FiMenu />}
-          </button>
-        )}
-
-        <div className={`nav-items ${mobileMenuOpen ? 'mobile-open' : ''}`}>
-          {categories.map((cat, index) => (
-            <div
-              key={index}
-              className="nav-item"
-              onMouseEnter={!isMobile ? () => toggleDropdown(index) : undefined}
-            >
+        <div className="nav-items">
+          {categories.map((cat, index) => {
+            const icon = index % 2 === 0 ? catalogImg1 : catalogImg2;
+            return (
               <div
-                className="nav-main-item"
-                onClick={() => {
-                  if (isMobile && cat.sub.length > 0) {
-                    toggleDropdown(index);
-                  }
-                }}
-                role="button"
-                aria-haspopup={cat.sub.length > 0}
-                aria-expanded={openDropdown === index}
-                title={cat.name}
+                key={index}
+                className="nav-item"
+                onMouseEnter={() => toggleDropdown(index)}
+                onMouseLeave={() => setOpenDropdown(null)}
               >
-                <span className="nav-icon">{cat.icon}</span>
-                <span className="nav-text">
-                  {cat.name.length > 12 ? `${cat.name.slice(0, 9)}...` : cat.name}
-                </span>
-                {cat.sub.length > 0 && (
-                  <span className="dropdown-icon">
-                    {openDropdown === index ? <FiChevronUp /> : <FiChevronDown />}
+                <div
+                  className="nav-main-item"
+                  onClick={() => {
+                    if (cat.sub.length > 0) {
+                      toggleDropdown(index);
+                    } else {
+                      handleCategoryClick(cat.name);
+                    }
+                  }}
+                  role="button"
+                  aria-haspopup={cat.sub.length > 0}
+                  aria-expanded={openDropdown === index}
+                  title={cat.name}
+                >
+                  <span className="nav-icon-container">
+                    <img src={icon} alt="Catalog" className="catalog-icon" />
                   </span>
+                  <span className="nav-text">
+                    {cat.name.length > 12 ? `${cat.name.slice(0, 9)}...` : cat.name}
+                  </span>
+               
+                </div>
+
+                {openDropdown === index && cat.sub.length > 0 && (
+                  <div className="dropdown-menu">
+                    {cat.sub.map((subItem, subIndex) => (
+                      <div
+                        key={subIndex}
+                        className={`dropdown-item ${selectedCategory === subItem ? 'active' : ''}`}
+                        onClick={() => handleCategoryClick(subItem)}
+                        role="button"
+                        title={subItem}
+                      >
+                        {subItem.length > 20 ? `${subItem.slice(0, 17)}...` : subItem}
+                      </div>
+                    ))}
+                  </div>
                 )}
               </div>
-
-              {openDropdown === index && cat.sub.length > 0 && (
-                <div className={`dropdown-menu ${isMobile ? 'mobile-dropdown' : ''}`}>
-                  {cat.sub.map((subItem, subIndex) => (
-                    <div
-                      key={subIndex}
-                      className={`dropdown-item ${selectedCategory === subItem ? 'active' : ''}`}
-                      onClick={() => handleCategoryClick(subItem)}
-                      role="button"
-                      title={subItem}
-                    >
-                      {subItem.length > 20 ? `${subItem.slice(0, 17)}...` : subItem}
-                    </div>
-                  ))}
-                </div>
-              )}
-            </div>
-          ))}
+            );
+          })}
         </div>
       </div>
     </nav>

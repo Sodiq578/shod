@@ -1,37 +1,51 @@
 import React from 'react';
 import { useParams, Link } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 import ProductCard from '../components/ProductCard';
 import { products } from '../data/products';
 import './Category.css';
 
 const Category = () => {
+  const { t } = useTranslation();
   const { cat } = useParams();
-
-  // Agar URL param bo‘lmasa → "Barcha mahsulotlar"
   const decodedCategory = cat ? decodeURIComponent(cat) : null;
 
-  // Filtrlash
-  const categoryProducts = !decodedCategory
-    ? products // default holda barcha mahsulotlar
-    : products.filter((product) => product.category === decodedCategory);
+  // Map translated subcategory names to their keys for matching
+  const categoryKeyMap = {
+    [t('categories.blanks')]: 'blanks',
+    [t('categories.notepads')]: 'notepads',
+    [t('categories.notePaper')]: 'notePaper',
+    // Add all subcategory translations and their corresponding keys
+    [t('categories.pens')]: 'pens',
+    [t('categories.pencils')]: 'pencils',
+    // ... add other mappings
+  };
+
+  // Convert decodedCategory to the corresponding key
+  const normalizedCategory = categoryKeyMap[decodedCategory] || decodedCategory;
+
+  // Filter products based on normalized category
+  const categoryProducts = !normalizedCategory
+    ? products // Show all products if no category is selected
+    : products.filter((product) => product.category === normalizedCategory);
 
   return (
     <div className="category-page">
-      <h2>{decodedCategory || "Barcha mahsulotlar"}</h2>
+      <h2>{decodedCategory || t('allProducts')}</h2>
       {categoryProducts.length > 0 ? (
         <div className="products-grid">
           {categoryProducts.map((product) => (
             <Link
               key={product.id}
               to={`/product/${product.id}`}
-              style={{ textDecoration: "none" }}
+              style={{ textDecoration: 'none' }}
             >
               <ProductCard product={product} />
             </Link>
           ))}
         </div>
       ) : (
-        <p>Ushbu kategoriyada hozircha mahsulotlar mavjud emas.</p>
+        <p>{t('noProductsInCategory')}</p>
       )}
     </div>
   );

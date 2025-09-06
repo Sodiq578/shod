@@ -1838,4 +1838,23 @@ export const products = [
     inStock: true 
   }
 
+
+
+  ,
+
+   {
+    id: 1,
+    name: 'A4 Blanks',
+    category: 'blanks', // Must match the key in categoryKeyMap
+    price: 10,
+    image: '/images/blank.jpg',
+  },
+  {
+    id: 2,
+    name: 'Blue Pen',
+    category: 'pens', // Must match the key in categoryKeyMap
+    price: 2,
+    image: '/images/pen.jpg',
+  },
+
 ]
