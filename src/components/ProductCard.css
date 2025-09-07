@@ -5,6 +5,7 @@
   display: flex;
   flex-wrap: wrap;
   align-items: center;
+  padding: 0 !important;
 }
 
 /* Reset any inherited styles to ensure isolation */
@@ -13,8 +14,8 @@
   background: #ffffff;
   border-radius: 24px;
   overflow: hidden;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+   
+ 
   height: auto;
   min-height: 475px;
   width: 100%;
@@ -32,7 +33,7 @@
 
 .pc-product-card:hover {
   transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+ 
 }
 
 .pc-product-link {

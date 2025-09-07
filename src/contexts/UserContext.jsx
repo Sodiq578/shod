@@ -1,34 +1,47 @@
-// src/contexts/UserContext.js (make sure it has these functions)
-import React, { createContext, useContext, useState } from 'react';
+import React, { createContext, useContext, useState, useEffect } from 'react';
 
 const UserContext = createContext();
 
 export const useUser = () => {
-  const context = useContext(UserContext);
-  if (!context) {
-    throw new Error('useUser must be used within a UserProvider');
-  }
-  return context;
+  return useContext(UserContext);
 };
 
 export const UserProvider = ({ children }) => {
   const [favorites, setFavorites] = useState([]);
+  const [user, setUser] = useState(null);
+
+  // Load favorites from localStorage on component mount
+  useEffect(() => {
+    const savedFavorites = localStorage.getItem('favorites');
+    if (savedFavorites) {
+      setFavorites(JSON.parse(savedFavorites));
+    }
+  }, []);
+
+  // Save favorites to localStorage whenever they change
+  useEffect(() => {
+    localStorage.setItem('favorites', JSON.stringify(favorites));
+  }, [favorites]);
 
   const addToFavorites = (product) => {
-    setFavorites(prev => {
+    setFavorites(prevFavorites => {
       // Check if product is already in favorites
-      if (prev.find(item => item.id === product.id)) {
-        return prev;
+      if (!prevFavorites.find(item => item.id === product.id)) {
+        return [...prevFavorites, product];
       }
-      return [...prev, product];
+      return prevFavorites;
     });
   };
 
   const removeFromFavorites = (productId) => {
-    setFavorites(prev => prev.filter(item => item.id !== productId));
+    setFavorites(prevFavorites => 
+      prevFavorites.filter(product => product.id !== productId)
+    );
   };
 
   const value = {
+    user,
+    setUser,
     favorites,
     addToFavorites,
     removeFromFavorites

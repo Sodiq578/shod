@@ -193,7 +193,6 @@ const Navbar = ({ selectedCategory, setSelectedCategory }) => {
                   <span className="nav-text">
                     {cat.name.length > 12 ? `${cat.name.slice(0, 9)}...` : cat.name}
                   </span>
-               
                 </div>
 
                 {openDropdown === index && cat.sub.length > 0 && (

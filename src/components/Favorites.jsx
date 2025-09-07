@@ -1,4 +1,3 @@
-// src/pages/Favorites.js
 import React from 'react';
 import { useUser } from '../contexts/UserContext';
 import ProductCard from '../components/ProductCard';

@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useParams, Link, useNavigate } from 'react-router-dom';
 import { products } from '../data/products';
 import { useCart } from '../contexts/CartContext';
+import { useUser } from '../contexts/UserContext';
 import ProductCard from './ProductCard';
 import { FaStar, FaShoppingCart, FaHeart, FaCheck, FaTimes, FaStore, FaChevronLeft } from 'react-icons/fa';
 import './ProductDetail.css';
@@ -15,16 +16,27 @@ const ProductDetail = () => {
   const [selectedImage, setSelectedImage] = useState(0);
   const [activeTab, setActiveTab] = useState('description');
   const { addToCart } = useCart();
+  const { addToFavorites, removeFromFavorites, favorites } = useUser();
   
+  // Check if product is in favorites
+  const [isFavorite, setIsFavorite] = useState(false);
+  
+  useEffect(() => {
+    if (product) {
+      const found = favorites.find((fav) => fav.id === product.id);
+      setIsFavorite(!!found);
+    }
+  }, [favorites, product]);
+
   const hasVariants = product && product.variants && product.variants.length > 0;
   const [selectedVariant, setSelectedVariant] = useState(
     hasVariants ? product.variants[0] : null
   );
 
-  // Sahifa yuklanganda eng yuqoriga aylantirish
+  // Scroll to top when page loads
   useEffect(() => {
     window.scrollTo(0, 0);
-  }, [id]); // ID o'zgarganda ham yangilaymiz
+  }, [id]);
 
   if (!product) {
     return (
@@ -38,7 +50,16 @@ const ProductDetail = () => {
     );
   }
 
-  // Faqat 3 ta thumbnail ko'rsatish
+  // Handle favorite click
+  const handleFavoriteClick = () => {
+    if (isFavorite) {
+      removeFromFavorites(product.id);
+    } else {
+      addToFavorites(product);
+    }
+  };
+
+  // Display only 3 thumbnails
   const displayedThumbnails = product.images && product.images.length > 0 
     ? product.images.slice(0, 3) 
     : [product.image];
@@ -59,7 +80,11 @@ const ProductDetail = () => {
   const decreaseQuantity = () => setQuantity(prev => (prev > 1 ? prev - 1 : 1));
 
   const handleAddToCart = () => {
-    addToCart({ ...product, quantity });
+    addToCart({ 
+      ...product, 
+      quantity,
+      variant: selectedVariant 
+    });
   };
 
   const similarProducts = products.filter(
@@ -68,7 +93,7 @@ const ProductDetail = () => {
 
   return (
     <div className="product-detail-container">
-      {/* Orqaga qaytish tugmasi */}
+      {/* Back button */}
       <button className="back-button" onClick={() => navigate(-1)}>
         <FaChevronLeft /> Orqaga
       </button>
@@ -79,7 +104,7 @@ const ProductDetail = () => {
 
       <div className="product-detail">
         <div className="product-gallery">
-          {/* Chap tomondagi 3 ta thumbnail */}
+          {/* Left side thumbnails */}
           <div className="thumbnails-column">
             {displayedThumbnails.map((img, index) => (
               <div 
@@ -92,7 +117,7 @@ const ProductDetail = () => {
             ))}
           </div>
 
-          {/* O'ng tomondagi asosiy rasm */}
+          {/* Main image */}
           <div className="main-image-container">
             <div className="main-image">
               <img 
@@ -105,7 +130,7 @@ const ProductDetail = () => {
         </div>
 
         <div className="product-info">
-          <h1>{product.name}</h1>
+          <h1 className="product-title">{product.name}</h1>
           
           <div className="product-meta">
             <span className="product-rating">
@@ -179,8 +204,12 @@ const ProductDetail = () => {
             >
               <FaShoppingCart /> Savatga qo'shish
             </button>
-            <button className="wishlist-btn" aria-label="Add to wishlist">
-              <FaHeart /> Sevimlilarga qo'shish
+            <button 
+              className={`wishlist-btn ${isFavorite ? 'active' : ''}`} 
+              onClick={handleFavoriteClick}
+              aria-label="Add to wishlist"
+            >
+              <FaHeart /> {isFavorite ? "Sevimlilardan o'chirish" : "Sevimlilarga qo'shish"}
             </button>
           </div>
 
@@ -245,6 +274,16 @@ const ProductDetail = () => {
                     <td>Ishlab chiqaruvchi</td>
                     <td>{product.manufacturer || 'Nomalum'}</td>
                   </tr>
+                  <tr>
+                    <td>Toifa</td>
+                    <td>{product.category || 'Nomalum'}</td>
+                  </tr>
+                  {product.specifications && Object.entries(product.specifications).map(([key, value]) => (
+                    <tr key={key}>
+                      <td>{key}</td>
+                      <td>{value}</td>
+                    </tr>
+                  ))}
                 </tbody>
               </table>
             </div>
@@ -265,12 +304,23 @@ const ProductDetail = () => {
               </div>
               
               <div className="review-list">
-                <div className="review-item">
-                  <div className="reviewer">Akmaljon</div>
-                  <div className="review-rating">★★★★★</div>
-                  <div className="review-text">Ajoyib mahsulot, tez yetkazib berishdi!</div>
-                  <div className="review-date">2023-11-15</div>
-                </div>
+                {product.reviewsData && product.reviewsData.length > 0 ? (
+                  product.reviewsData.map((review, index) => (
+                    <div key={index} className="review-item">
+                      <div className="reviewer">{review.name}</div>
+                      <div className="review-rating">
+                        {'★'.repeat(review.rating)}
+                        {'☆'.repeat(5 - review.rating)}
+                      </div>
+                      <div className="review-text">{review.comment}</div>
+                      <div className="review-date">{review.date}</div>
+                    </div>
+                  ))
+                ) : (
+                  <div className="no-reviews">
+                    <p>Hozircha hech qanday sharh yo'q. Birinchi bo'ling!</p>
+                  </div>
+                )}
               </div>
             </div>
           )}
