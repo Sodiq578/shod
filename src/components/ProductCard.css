@@ -1,7 +1,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Galada&display=swap');
 
-.product-card {
-  background: #fff;
+
+.cards-box{
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+/* Reset any inherited styles to ensure isolation */
+.pc-product-card {
+  all: initial; /* Reset all inherited properties */
+  background: #ffffff;
   border-radius: 24px;
   overflow: hidden;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
@@ -12,19 +21,21 @@
   max-width: 423px;
   font-family: 'Galada', cursive;
   font-weight: 400;
-  border: 1px solid #ddd;
+  border: 1px solid #dddddd;
   display: flex;
   flex-direction: column;
   position: relative;
   cursor: pointer;
+  box-sizing: border-box;
+  
 }
 
-.product-card:hover {
+.pc-product-card:hover {
   transform: translateY(-2px);
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
 
-.product-link {
+.pc-product-link {
   text-decoration: none;
   color: inherit;
   display: flex;
@@ -32,7 +43,7 @@
   height: 100%;
 }
 
-.product-image {
+.pc-product-image {
   position: relative;
   width: 100%;
   height: 327px;
@@ -40,19 +51,20 @@
   flex-shrink: 0;
 }
 
-.product-image img {
+.pc-product-image img {
   width: 100%;
   height: 100%;
   object-fit: cover;
   transition: transform 0.3s ease;
+  display: block; /* Remove any inline image spacing */
 }
 
-.product-card:hover .product-image img {
+.pc-product-card:hover .pc-product-image img {
   transform: scale(1.05);
 }
 
-/* Pastki navigatsiya uslubi */
-.image-navigation-bottom {
+/* Bottom navigation styles */
+.pc-image-navigation-bottom {
   position: absolute;
   bottom: 10px;
   left: 0;
@@ -65,15 +77,15 @@
   transition: opacity 0.3s ease;
 }
 
-/* Ko'rsatkichlar (nuqtalar) */
-.image-indicators {
+/* Image indicators (dots) */
+.pc-image-indicators {
   display: flex;
-  gap: 6px; /* Yaqin oralik */
+  gap: 6px;
 }
 
-.image-indicator {
-  width: 10px;
-  height: 10px;
+.pc-image-indicator {
+  width: 7px;
+  height: 7px;
   border-radius: 50%;
   background: rgba(255, 255, 255, 0.6);
   border: none;
@@ -82,23 +94,23 @@
   transition: all 0.2s ease;
 }
 
-.image-indicator:hover {
+.pc-image-indicator:hover {
   background: rgba(255, 255, 255, 0.8);
   transform: scale(1.2);
 }
 
-.image-indicator.active {
+.pc-image-indicator.active {
   background: rgba(255, 255, 255, 1);
   transform: scale(1.3);
 }
 
-/* O'ng tomondagi navigatsiya tugmalari */
-.nav-buttons-right {
+/* Right-side navigation buttons */
+.pc-nav-buttons-right {
   display: flex;
-  gap: 8px; /* Yaqin oralik */
+  gap: 8px;
 }
 
-.nav-button {
+.pc-nav-button {
   background: rgba(255, 255, 255, 0.8);
   border: none;
   border-radius: 50%;
@@ -109,16 +121,16 @@
   justify-content: center;
   cursor: pointer;
   font-size: 12px;
-  color: #333;
+  color: #333333;
   transition: all 0.2s ease;
 }
 
-.nav-button:hover {
+.pc-nav-button:hover {
   background: rgba(255, 255, 255, 1);
   transform: scale(1.1);
 }
 
-.like-btn {
+.pc-like-btn {
   position: absolute;
   top: 10px;
   right: 10px;
@@ -132,34 +144,35 @@
   justify-content: center;
   cursor: pointer;
   transition: all 0.2s ease;
-  color: #666;
+  color: #666666;
   z-index: 10;
 }
 
-.like-btn:hover {
+.pc-like-btn:hover {
   background: rgba(255, 255, 255, 1);
   color: #ff4444;
 }
 
-.like-btn.active {
+.pc-like-btn.active {
   color: #ff4444;
   background: rgba(255, 255, 255, 1);
 }
 
-.product-info {
+.pc-product-info {
   padding: 20px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   flex-grow: 1;
+  box-sizing: border-box;
 }
 
-.product-name {
+.pc-product-name {
   font-family: 'Galada', cursive;
-  font-weight: 400;
+  font-weight: 700;
   font-size: 18px;
   margin: 0 0 10px 0;
-  color: #333;
+  color: #333333;
   line-height: 1.3;
   overflow: hidden;
   display: -webkit-box;
@@ -168,14 +181,14 @@
   min-height: 46px;
 }
 
-.product-box {
+.pc-product-box {
   display: flex;
   justify-content: space-between;
   align-items: center;
   margin-top: auto;
 }
 
-.product-price {
+.pc-product-price {
   font-family: 'Galada', cursive;
   font-weight: 400;
   font-size: 20px;
@@ -183,92 +196,96 @@
   margin: 0;
 }
 
-.add-to-cart-btn {
+.pc-add-to-cart-btn {
+  width: 53px;
+  height: 53px;
+  border-radius: 50%;
   background: transparent;
   border: none;
+  transition: background-color 0.2s ease, transform 0.2s ease;
   cursor: pointer;
-  padding: 8px;
-  border-radius: 50%;
-  transition: background-color 0.2s ease;
+  background-color: #F2F2F2;
 }
 
-.add-to-cart-btn:hover {
+.pc-add-to-cart-btn:hover {
   background-color: rgba(76, 175, 80, 0.1);
 }
 
-.add-to-cart-btn img {
-  width: 24px;
-  height: 24px;
+.pc-add-to-cart-btn img {
+  width: 50px;
+  height: 50px;
 }
 
-/* Container for cards to handle 4 per row with gap */
-.product-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+
+.pc-product-grid {
+ 
+  display: flex;
   gap: 20px;
   padding: 20px;
   justify-content: center;
+
+
 }
 
 /* Responsive design */
 @media (max-width: 1716px) {
-  .product-card {
+  .pc-product-card {
     max-width: 350px;
   }
 }
 
 @media (max-width: 1200px) {
-  .product-grid {
+  .pc-product-grid {
     grid-template-columns: repeat(3, 1fr);
   }
 }
 
 @media (max-width: 900px) {
-  .product-grid {
+  .pc-product-grid {
     grid-template-columns: repeat(2, 1fr);
   }
   
-  .product-card {
+  .pc-product-card {
     max-width: 100%;
   }
   
-  .product-image {
+  .pc-product-image {
     height: 280px;
   }
 }
 
 @media (max-width: 600px) {
-  .product-grid {
+  .pc-product-grid {
     grid-template-columns: 1fr;
   }
   
-  .product-image {
+  .pc-product-image {
     height: 250px;
   }
   
-  .product-info {
+  .pc-product-info {
     padding: 15px;
   }
   
-  .product-name {
+  .pc-product-name {
     font-size: 16px;
   }
   
-  .product-price {
+  .pc-product-price {
     font-size: 18px;
   }
   
-  .image-navigation-bottom {
+  .pc-image-navigation-bottom {
     padding: 0 10px;
   }
   
-  .nav-button {
+  .pc-nav-button {
     width: 24px;
     height: 24px;
     font-size: 10px;
   }
   
-  .image-indicator {
+  .pc-image-indicator {
     width: 8px;
     height: 8px;
   }

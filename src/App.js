@@ -2,8 +2,6 @@ import React, { useState } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import Header from './components/Header';
-import Navbar from './components/Navbar';
-import Banner from './components/Banner'; // Import the Banner component
 import Footer from './components/Footer';
 import Home from './pages/Home';
 import Category from './pages/Category';
@@ -32,11 +30,6 @@ function App() {
               setSelectedCategory={setSelectedCategory}
               searchTerm={searchTerm}
               setSearchTerm={setSearchTerm}
-            />
-            <Banner /> {/* Banner placed below Header and above Navbar */}
-            <Navbar
-              selectedCategory={selectedCategory}
-              setSelectedCategory={setSelectedCategory}
             />
             <div className="main-content">
               <main>

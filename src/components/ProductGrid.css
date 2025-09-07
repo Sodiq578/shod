@@ -1,43 +1,33 @@
-@import url('https://fonts.googleapis.com/css2?family=Galada&display=swap');
-
-.app {
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-  font-family: 'Galada', cursive;
-  font-weight: 400; /* Regular weight for Galada */
-}
-
-.main-content {
-  display: flex;
-  flex: 1;
-}
-
-.sidebar {
-  width: 250px;
-  background: #f8f9fa;
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
   padding: 20px;
-  border-right: 1px solid #e0e0e0;
-  height: auto;
+  justify-content: center;
+  max-width: 1800px;
+  margin: 0 auto;
 }
 
-main {
-  flex: 1;
-  padding: 20px;
-}
-
- 
-
-@media (max-width: 768px) {
-  .main-content {
-    flex-direction: column;
-  }
-  .sidebar {
-    width: 100%;
-    border-right: none;
-    border-bottom: 1px solid #e0e0e0;
-  }
+@media (max-width: 1200px) {
   .product-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 18px;
+    padding: 18px;
+  }
+}
+
+@media (max-width: 900px) {
+  .product-grid {
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 15px;
+    padding: 15px;
+  }
+}
+
+@media (max-width: 600px) {
+  .product-grid {
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 12px;
+    padding: 12px;
   }
 }

@@ -1,13 +1,14 @@
-import React, { useState } from 'react';
-import { useParams, Link } from 'react-router-dom';
+import React, { useState, useEffect } from 'react';
+import { useParams, Link, useNavigate } from 'react-router-dom';
 import { products } from '../data/products';
 import { useCart } from '../contexts/CartContext';
 import ProductCard from './ProductCard';
-import { FaStar, FaShoppingCart, FaHeart, FaCheck, FaTimes, FaStore, FaChevronUp, FaChevronDown } from 'react-icons/fa';
+import { FaStar, FaShoppingCart, FaHeart, FaCheck, FaTimes, FaStore, FaChevronLeft } from 'react-icons/fa';
 import './ProductDetail.css';
 
 const ProductDetail = () => {
   const { id } = useParams();
+  const navigate = useNavigate();
   const product = products.find(p => p.id === parseInt(id));
   
   const [quantity, setQuantity] = useState(1);
@@ -19,6 +20,11 @@ const ProductDetail = () => {
   const [selectedVariant, setSelectedVariant] = useState(
     hasVariants ? product.variants[0] : null
   );
+
+  // Sahifa yuklanganda eng yuqoriga aylantirish
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [id]); // ID o'zgarganda ham yangilaymiz
 
   if (!product) {
     return (
@@ -62,6 +68,11 @@ const ProductDetail = () => {
 
   return (
     <div className="product-detail-container">
+      {/* Orqaga qaytish tugmasi */}
+      <button className="back-button" onClick={() => navigate(-1)}>
+        <FaChevronLeft /> Orqaga
+      </button>
+
       <nav className="breadcrumb">
         <Link to="/">Bosh sahifa</Link> / <Link to="/products">Mahsulotlar</Link> / <span>{product.name}</span>
       </nav>

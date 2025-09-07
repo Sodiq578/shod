@@ -14,17 +14,17 @@ const ProductList = ({ selectedCategory }) => {
       {filteredProducts.length === 0 ? (
         <p>No products found for this category.</p>
       ) : (
-        <div className="product-grid">
+        <div className="product-list__grid">
           {filteredProducts.map((product) => (
-            <div key={product.id} className="product-card">
-              <img src={product.image} alt={product.name} className="product-image" />
-              <h3>{product.name}</h3>
-              <p>{product.description}</p>
-              <p>Price: {product.price}</p>
-              <p>Rating: {product.rating} ({product.reviews} reviews)</p>
-              <p>Seller: {product.seller}</p>
-              <p>{product.inStock ? 'In Stock' : 'Out of Stock'}</p>
-              {product.trending && <span className="trending">Trending</span>}
+            <div key={product.id} className="product-list__card">
+              <img src={product.image} alt={product.name} className="product-list__image" />
+              <h3 className="product-list__card-title">{product.name}</h3>
+              <p className="product-list__card-text">{product.description}</p>
+              <p className="product-list__card-text">Price: {product.price}</p>
+              <p className="product-list__card-text">Rating: {product.rating} ({product.reviews} reviews)</p>
+              <p className="product-list__card-text">Seller: {product.seller}</p>
+              <p className="product-list__card-text">{product.inStock ? 'In Stock' : 'Out of Stock'}</p>
+              {product.trending && <span className="product-list__trending">Trending</span>}
             </div>
           ))}
         </div>

@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
-import { FaHeart, FaShoppingCart, FaChevronLeft, FaChevronRight } from 'react-icons/fa';
+import { FaHeart, FaChevronLeft, FaChevronRight } from 'react-icons/fa';
 import { useUser } from '../contexts/UserContext';
 import { useCart } from '../contexts/CartContext';
 import './ProductCard.css';
@@ -16,21 +16,21 @@ const ProductCard = ({ product }) => {
 
   // Check if product is in favorites
   useEffect(() => {
-    const found = favorites.find(fav => fav.id === product.id);
+    const found = favorites.find((fav) => fav.id === product.id);
     setIsFavorite(!!found);
   }, [favorites, product.id]);
 
-  // Agar productda images array bo'lsa, undan foydalanamiz, aks holda image dan
+  // Use images array if available, otherwise fallback to single image
   const images = product.images || [product.image];
 
-  // Avtomatik slider efekti
+  // Auto-slider effect
   useEffect(() => {
     if (images.length > 1 && isHovered) {
       autoSlideRef.current = setInterval(() => {
-        setCurrentImageIndex((prevIndex) => 
+        setCurrentImageIndex((prevIndex) =>
           prevIndex === images.length - 1 ? 0 : prevIndex + 1
         );
-      }, 2000); // Har 2 soniyada avtomatik ravishda o'zgaradi
+      }, 2000); // Slide every 2 seconds
     } else {
       clearInterval(autoSlideRef.current);
     }
@@ -41,7 +41,6 @@ const ProductCard = ({ product }) => {
   const handleFavoriteClick = (e) => {
     e.preventDefault();
     e.stopPropagation();
-    
     if (isFavorite) {
       removeFromFavorites(product.id);
     } else {
@@ -58,7 +57,7 @@ const ProductCard = ({ product }) => {
   const handleNextImage = (e) => {
     e.preventDefault();
     e.stopPropagation();
-    setCurrentImageIndex((prevIndex) => 
+    setCurrentImageIndex((prevIndex) =>
       prevIndex === images.length - 1 ? 0 : prevIndex + 1
     );
   };
@@ -66,7 +65,7 @@ const ProductCard = ({ product }) => {
   const handlePrevImage = (e) => {
     e.preventDefault();
     e.stopPropagation();
-    setCurrentImageIndex((prevIndex) => 
+    setCurrentImageIndex((prevIndex) =>
       prevIndex === 0 ? images.length - 1 : prevIndex - 1
     );
   };
@@ -80,23 +79,18 @@ const ProductCard = ({ product }) => {
   };
 
   return (
-    <div className="product-card" onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
-      <Link to={`/product/${product.id}`} className="product-link">
-        <div className="product-image">
-          <img 
-            src={images[currentImageIndex]} 
-            alt={product.name} 
-            loading="lazy" 
-          />
-          
-          {/* Agar 1 dan ortiq rasm bo'lsa, navigatsiya ko'rsatamiz */}
+<div className="cards-box">
+      <div className="pc-product-card" onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
+      <Link to={`/product/${product.id}`} className="pc-product-link">
+        <div className="pc-product-image">
+          <img src={images[currentImageIndex]} alt={product.name} loading="lazy" />
           {images.length > 1 && (
-            <div className="image-navigation-bottom">
-              <div className="image-indicators">
+            <div className="pc-image-navigation-bottom">
+              <div className="pc-image-indicators">
                 {images.map((_, index) => (
                   <button
                     key={index}
-                    className={`image-indicator ${index === currentImageIndex ? 'active' : ''}`}
+                    className={`pc-image-indicator ${index === currentImageIndex ? 'active' : ''}`}
                     onClick={(e) => {
                       e.preventDefault();
                       e.stopPropagation();
@@ -106,48 +100,36 @@ const ProductCard = ({ product }) => {
                   />
                 ))}
               </div>
-              <div className="nav-buttons-right">
-                <button 
-                  className="nav-button"
-                  onClick={handlePrevImage}
-                  aria-label="Previous image"
-                >
+              <div className="pc-nav-buttons-right">
+                <button className="pc-nav-button" onClick={handlePrevImage} aria-label="Previous image">
                   <FaChevronLeft />
                 </button>
-                <button 
-                  className="nav-button"
-                  onClick={handleNextImage}
-                  aria-label="Next image"
-                >
+                <button className="pc-nav-button" onClick={handleNextImage} aria-label="Next image">
                   <FaChevronRight />
                 </button>
               </div>
             </div>
           )}
-          
-          <button 
-            className={`like-btn ${isFavorite ? 'active' : ''}`}
+          <button
+            className={`pc-like-btn ${isFavorite ? 'active' : ''}`}
             onClick={handleFavoriteClick}
-            aria-label={isFavorite ? "Remove from favorites" : "Add to favorites"}
+            aria-label={isFavorite ? 'Remove from favorites' : 'Add to favorites'}
           >
             <FaHeart />
           </button>
         </div>
-        <div className="product-info">
-          <h3 className="product-name">{product.name}</h3>
-          <div className="product-box">
-            <p className="product-price">{product.price}</p>
-            <button 
-              className="add-to-cart-btn"
-              onClick={handleAddToCart}
-              aria-label="Add to cart"
-            >
+        <div className="pc-product-info">
+          <h3 className="pc-product-name">{product.name}</h3>
+          <div className="pc-product-box">
+            <p className="pc-product-price">{product.price}</p>
+            <button className="pc-add-to-cart-btn" onClick={handleAddToCart} aria-label="Add to cart">
               <img src={bag} alt="Shopping bag" />
             </button>
           </div>
         </div>
       </Link>
     </div>
+</div>
   );
 };
 

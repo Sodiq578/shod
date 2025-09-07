@@ -8,7 +8,7 @@ const Footer = () => {
       <div className="footer-container">
         <div className="footer-content">
           <div className="footer-section">
-            <h3>WAKTU INDONESIA BELANJA</h3>
+            
             <p>Eng yaxshi mahsulotlarni eng qulay narxlarda taklif qilamiz.</p>
           </div>
           
@@ -38,9 +38,7 @@ const Footer = () => {
           </div>
         </div>
         
-        <div className="footer-bottom">
-          <p>&copy; 2023 WAKTU INDONESIA BELANJA. Barcha huquqlar himoyalangan.</p>
-        </div>
+      
       </div>
     </footer>
   );
