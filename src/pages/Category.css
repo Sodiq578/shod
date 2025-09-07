@@ -66,6 +66,6 @@
 
   .products-grid {
     grid-template-columns: 1fr;
-    gap: 12px;
+    gap: 13px;
   }
 }
